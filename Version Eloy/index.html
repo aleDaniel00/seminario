@@ -1,0 +1,187 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+      <title>Turnos App</title>
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/estilo.css" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+    <header>
+        <!-- Botones de inicio de sesion y registro estructura -->
+        <div id="ris">
+          <p>
+            <a href="#modal1" class="waves-effect waves-light modal-trigger orange-text text-darken-2">Registarse</a>
+             / 
+            <a href="#modal2" class="waves-effect waves-light modal-trigger orange-text text-darken-2">Iniciar Sesión</a>
+          </p>
+        </div>
+
+        <!-- Nav estructura -->  
+        <nav class="grey lighten-1">
+          <div class="nav-wrapper">
+            <a href="#!" class="brand-logo"><img src="img/logo.png" alt="logo de la marca"></a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="sass.html" class="orange-text text-darken-2">Home</a></li>
+              <li><a href="badges.html" class="orange-text text-darken-2">Como Funciona</a></li>
+              <li><a href="collapsible.html" class="orange-text text-darken-2">Quienes Somos</a></li>
+              <li><a href="mobile.html" class="orange-text text-darken-2" >Contactos</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+              <li><a href="sass.html">Home</a></li>
+              <li><a href="badges.html">Como Funciona</a></li>
+              <li><a href="collapsible.html">Quienes Somos</a></li>
+              <li><a href="mobile.html">Contactos</a></li>
+              <li><a href="mobile.html">Registarse / Iniciar Sesion</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <!-- Modal Registarse -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+              <h4>Registrate</h4>
+              <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">email</i>
+                      <input id="email" type="email" class="validate">
+                      <label for="email" data-error="wrong" data-success="right">Email</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">perm_identity</i>
+                      <input id="nsocio" type="number" class="validate">
+                      <label for="nsocio" data-error="wrong" data-success="right">Numero de socio</label>
+                    </div>
+                  </div>
+                  <div>
+                     <button class="btn waves-effect waves-light" type="submit" name="action">Registarse
+                      <i class="material-icons right">send</i>
+                     </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons right">close</i></a>
+            </div>
+        </div>
+
+        <!-- Modal inicar sesion -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+              <h4>Tu Cuenta</h4>
+            <div class="row">
+                <form class="col s12">
+                  <div class="row">
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">perm_identity</i>
+                      <input id="nsocio" type="number" class="validate">
+                      <label for="nsocio" data-error="wrong" data-success="right">Numero de socio</label>
+                    </div>
+                    <div class="input-field col s12">
+                      <i class="material-icons prefix">lock_open</i>
+                      <input id="password" type="password" class="validate">
+                      <label for="password" data-error="wrong" data-success="right">Password</label>
+                    </div>
+                  </div>
+                  <div>
+                     <a href="view/admin.html" class=" modal-action modal-close waves-effect waves-green btn-flat">   Ingresar
+                      <i class="material-icons right">send</i>
+                     </a>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons right">close</i></a>
+            </div>
+        </div>
+
+    </header>
+    <main>  
+      <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+          <div class="container">
+            <br><br>
+            <h1 class="header  orange-text text-darken-2">Turnos App</h1>
+            <div class="row">
+              <h5 class="header col s12 orange-text text-darken-2">Tua atencion desde cualquier lugar</h5>
+            </div>
+          </div>
+        </div>
+        <div class="parallax z-depth-2"><img src="img/background1.jpg" alt="Unsplashed background img 1"></div>
+      </div>
+
+       <div class="container">
+          <div class="section">
+
+            <!--   Icon Section   -->
+            <div class="row">
+              <div class="col s12 m4 light-blue accent-2 z-depth-3">
+                <div class="icon-block">
+                  <h2 class="center brown-text"><i class="material-icons">flash_on</i></h2>
+                  <h5 class="center">Speeds up development</h5>
+
+                  <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                </div>
+              </div>
+
+              <div class="col s12 m4 light-blue accent-2 z-depth-3">
+                <div class="icon-block">
+                  <h2 class="center brown-text"><i class="material-icons">group</i></h2>
+                  <h5 class="center">User Experience Focused</h5>
+
+                  <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across all platforms allow for a more unified user experience.</p>
+                </div>
+              </div>
+
+              <div class="col s12 m4 light-blue accent-2 z-depth-3">
+                <div class="icon-block">
+                  <h2 class="center brown-text"><i class="material-icons">settings</i></h2>
+                  <h5 class="center">Easy to work with</h5>
+
+                  <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      
+      </main>
+      <footer class="page-footer grey lighten-1">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/javascript.js"></script>
+    </body>
+  </html>
