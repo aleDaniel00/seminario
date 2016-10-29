@@ -1,13 +1,15 @@
-nav{margin-top: 3%; z-index: 100;}
-#ris{margin-left: 80%; width: 200px; height: 50px; top: -2%; position: absolute;}
 
-@media (max-width: 1000px) {
-  #ris {
-    display: none;
-  }
-  nav{
-  	margin-top: 0px;
-  }
-}
+nav{height: 130px;}
+nav ul 	   {margin-right: 10%;}
+.parallax{background: black;}
 
-.panelAdmin{margin-top: 3%;}
+
+#nombre{font-size: 2rem; padding-top: 2%; margin: 0px;}
+
+.navAdmin{ height: 130px; }
+.navAdmin div {height: 100%;}
+
+
+.panelAdmin ul li{padding-top: 15%;}
+
+#tiempo{font-size: 5rem; padding: 0px; margin: 0px;}
