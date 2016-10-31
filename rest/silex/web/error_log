@@ -1,0 +1,1 @@
+[07-Oct-2016 09:07:07 America/New_York] PHP Fatal error:  Class 'Silex\Application' not found in /home/turncbct/public_html/rest/silex/web/index.php on line 6

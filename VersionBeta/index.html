@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Turnos App</title>
+
+    <!-- Materialize CSS -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="css/estilo.css" />
+    <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-materialize/0.2.1/angular-materialize.min.js"></script>
+
+</head>
+
+<body ng-app="turnosApp">
+    <header>
+        <!-- Botones de inicio de sesion y registro estructura -->
+
+
+        <!-- Nav estructura -->
+        <nav class="white">
+            <div class="nav-wrapper">
+                <a href="#!" class="brand-logo"><img src="img/logo.png" alt="logo de la marca"></a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse">
+                    <i class="large material-icons orange-text text-lighten-1">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a class=" waves-effect waves-light  modal-trigger blue-grey-text text-lighten-3" href="#modal1">
+                            <div class="icon-preview col s6 m3">
+                                <i class="tiny material-icons center">input</i>
+                                <span>Ingresar</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li>
+                        <a class=" waves-effect waves-light  modal-trigger blue-grey-text text-lighten-3" href="#modal2">
+                            <div class="icon-preview col s6 m3">
+                                <i class="tiny material-icons center">fingerprint</i>
+                                <span>Registrase</span>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="sass.html">Ingresar</a></li>
+                    <li><a href="badges.html">Registrarse</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Modal Registarse -->
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <div class="row">
+                    <h4 class="center col s11">Registrarte</h4>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat col s1">
+                        <i class="material-icons right">close</i>
+                    </a>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">email</i>
+                                <input id="email" type="email" class="validate">
+                                <label for="email" data-error="wrong" data-success="right">Email</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">perm_identity</i>
+                                <input id="nsocio" type="number" class="validate">
+                                <label for="nsocio" data-error="wrong" data-success="right">Numero de socio</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p class="col s10 offset-s1 center">
+                                Cuando inicias sesión, confirmas que estas de acuerdo con las
+                                <a href="#">politicas de privacidad</a> y los
+                                <a href="#">terminos de uso</a>.
+                            </p>
+                        </div>
+                        <div class="row">
+                            <a href="view/admin.html" class=" modal-action modal-close waves-effect waves-green btn col s4 offset-s4">Registarse
+                        <i class="material-icons right">send</i>
+                       </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal inicar sesion -->
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="row">
+                    <h4 class="center col s11">Ingresar</h4>
+                    <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat col s1">
+                        <i class="material-icons right">close</i>
+                    </a>
+                </div>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">perm_identity</i>
+                                <input id="nsocio" type="number" class="validate">
+                                <label for="nsocio" data-error="wrong" data-success="right">Numero de socio</label>
+                            </div>
+                            <div class="input-field col s12">
+                                <i class="material-icons prefix">lock_open</i>
+                                <input id="password" type="password" class="validate">
+                                <label for="password" data-error="wrong" data-success="right">Password</label>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <a href="#" class="col s5 offset-s4 center">
+                                <p>¿Te olvidaste la constraseña?</p>
+                            </a>
+                        </div>
+                        <div class="row">
+                            <a href="view/admin.html" class=" modal-action modal-close waves-effect waves-green btn col s4 offset-s4">Ingresar
+                        <i class="material-icons right">send</i>
+                       </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </header>
+    <main>
+        <div id="index-banner" class="parallax-container">
+            <div class="section no-pad-bot">
+                <div class="container">
+                    <br><br>
+                    <h1 class="header  white-text">Por fin</h1>
+                    <div class="row">
+                        <h5 class="header col s12 white-text">Una app para sacar un turno en la guardia</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax z-depth-2"><img src="img/fondo1.jpg" alt="Unsplashed background img 1"></div>
+        </div>
+
+        <div class="container">
+            <div class="section">
+
+                <!--   Icon Section   -->
+                <div class="row">
+                    <div class="col s12">
+                        <hr>
+                        <p class="flow-text center">
+                            Como funciona
+                        </p>
+                        <hr>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col s12 m4">
+                        <div class="icon-block">
+
+                            <h5 class="center">Speeds up development</h5>
+
+                            <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 ">
+                        <div class="icon-block">
+
+                            <h5 class="center">User Experience Focused</h5>
+
+                            <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system
+                                across all platforms allow for a more unified user experience.</p>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 ">
+                        <div class="icon-block">
+
+                            <h5 class="center">Easy to work with</h5>
+
+                            <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+    <footer class="page-footer orange lighten-1">
+        <div class="container">
+            <div class="row ">
+                <a class="waves-effect waves-light btn-large col s4 offset-s4">Registrate</a>
+            </div>
+    </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/javascript.js"></script>
+</body>
+
+</html>
