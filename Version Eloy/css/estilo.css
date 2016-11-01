@@ -3,13 +3,15 @@ nav{height: 130px;}
 nav ul 	   {margin-right: 10%;}
 .parallax{background: black;}
 
+footer{height: 20%;}
 
 #nombre{font-size: 2rem; padding-top: 2%; margin: 0px;}
+#cerrar{padding-top: 15%;}
 
 .navAdmin{ height: 130px; }
 .navAdmin div {height: 100%;}
 
-.panelAdmin{height: 100%;}
+#menuLateral{min-height: 840px; max-height: 100%;}
 .panelAdmin ul li{padding-top: 15%;}
 
 #tiempo{font-size: 5rem; padding: 0px; margin: 0px;}
