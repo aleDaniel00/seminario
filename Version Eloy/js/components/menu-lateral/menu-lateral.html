@@ -1,0 +1,9 @@
+<div class="col s2 blue-grey darken-4" id="menuLateral">
+	 <ul>
+	    <li class="collection-item avatar center" ng-repeat=" dato in datos">
+		    <a href="#{{ dato.ruta }}" class="tooltipped" data-position="right" data-delay="50" data-tooltip="{{ dato.nombre }}">
+		      <i class="small material-icons white-text">{{ dato.icono }}</i>
+		    </a>
+	    </li>
+	</ul>
+</div>
