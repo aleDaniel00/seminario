@@ -1,173 +1,102 @@
 <header>
-    <!-- Botones de inicio de sesion y registro estructura -->
-
-
-    <!-- Nav estructura -->
-    <nav class="white">
-        <div class="nav-wrapper">
-            <a href="#!" class="brand-logo"><img src="img/logo.png" alt="logo de la marca"></a>
-            <a href="#" data-activates="mobile-demo" class="button-collapse">
-                <i class="large material-icons orange-text text-lighten-1">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li>
-                    <a class=" waves-effect waves-light  modal-trigger blue-grey-text text-lighten-3" href="#modal1">
-                        <div class="icon-preview col s6 m3">
-                            <i class="tiny material-icons center">input</i>
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#"><img src="img/logo.png" alt=""></a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#" ng-click="$ctrl.open()">
+                            <span><i class="material-icons">fingerprint</i></span>
                             <span>Ingresar</span>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a class=" waves-effect waves-light  modal-trigger blue-grey-text text-lighten-3" href="#modal2">
-                        <div class="icon-preview col s6 m3">
-                            <i class="tiny material-icons center">fingerprint</i>
-                            <span>Registrase</span>
-                        </div>
-                    </a>
-                </li>
-
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="sass.html">Ingresar</a></li>
-                <li><a href="badges.html">Registrarse</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Modal Registarse -->
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <div class="row">
-                <h4 class="center col s11">Registrarte</h4>
-                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat col s1">
-                    <i class="material-icons right">close</i>
-                </a>
-            </div>
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">email</i>
-                            <input id="email" type="email" class="validate">
-                            <label for="email" data-error="wrong" data-success="right">Email</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">perm_identity</i>
-                            <input id="nsocio" type="number" class="validate">
-                            <label for="nsocio" data-error="wrong" data-success="right">Numero de socio</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <p class="col s10 offset-s1 center">
-                            Cuando inicias sesión, confirmas que estas de acuerdo con las
-                            <a href="#">politicas de privacidad</a> y los
-                            <a href="#">terminos de uso</a>.
-                        </p>
-                    </div>
-                    <div class="row">
-                        <a href="view/admin.html" class=" modal-action modal-close waves-effect waves-green btn col s4 offset-s4">Registarse
-                        <i class="material-icons right">send</i>
-                       </a>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal inicar sesion -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <div class="row">
-                <h4 class="center col s11">Ingresar</h4>
-                <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat col s1">
-                    <i class="material-icons right">close</i>
-                </a>
-            </div>
-            <div class="row">
-                <form class="col s12">
-                    <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">perm_identity</i>
-                            <input id="nsocio" type="number" class="validate">
-                            <label for="nsocio" data-error="wrong" data-success="right">Numero de socio</label>
-                        </div>
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">lock_open</i>
-                            <input id="password" type="password" class="validate">
-                            <label for="password" data-error="wrong" data-success="right">Password</label>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <a href="#" class="col s5 offset-s4 center">
-                            <p>¿Te olvidaste la constraseña?</p>
                         </a>
-                    </div>
-                    <div class="row">
-                        <a href="view/admin.html" class=" modal-action modal-close waves-effect waves-green btn col s4 offset-s4">Ingresar
-                        <i class="material-icons right">send</i>
-                       </a>
-                    </div>
-                </form>
+                    </li>
+                    <li>
+                        <a href="#" ng-click="$ctrl.open()">
+                            <span><i class="material-icons">add</i></span>
+                            <span>Registrarse</span>
+                        </a>
+                    </li>
+                </ul>
             </div>
+            <!-- /.navbar-collapse -->
         </div>
-    </div>
-
+        <!-- /.container-fluid -->
+    </nav>
 </header>
+
 <main>
-    <div id="index-banner" class="parallax-container">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <br><br>
-                <h1 class="header  white-text">Por fin</h1>
-                <div class="row">
-                    <h5 class="header col s12 white-text">Una app para sacar un turno en la guardia</h5>
-                </div>
+    <div class="container-fluid slide">
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Por fin</h1>
+                <p>Puedo sacar mi turno de la guardia online</p>
             </div>
         </div>
-        <div class="parallax z-depth-2"><img src="img/fondo1.jpg" alt="Unsplashed background img 1"></div>
     </div>
-
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title">I'm a modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body">
+            <ul>
+                <li ng-repeat="item in $ctrl.items">
+                    <a href="#" ng-click="$event.preventDefault(); $ctrl.selected.item = item">{{ item }}</a>
+                </li>
+            </ul>
+            Selected: <b>{{ $ctrl.selected.item }}</b>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="$ctrl.ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="$ctrl.cancel()">Cancel</button>
+        </div>
+    </script>
+    <script type="text/ng-template" id="stackedModal.html">
+        <div class="modal-header">
+            <h3 class="modal-title" id="modal-title-{{name}}">The {{name}} modal!</h3>
+        </div>
+        <div class="modal-body" id="modal-body-{{name}}">
+            Having multiple modals open at once is probably bad UX but it's technically possible.
+        </div>
+    </script>
     <div class="container">
         <div class="section">
-
-            <!--   Icon Section   -->
-            <div class="row">
-                <div class="col s12">
-                    <hr>
-                    <p class="flow-text center">
-                        Como funciona
-                    </p>
-                    <hr>
-                </div>
-
+            <div class="jumbotron">
+                <h2 class="text-center">Como funciona</h2>
             </div>
             <div class="row">
-                <div class="col s12 m4">
-                    <div class="icon-block">
-
-                        <h5 class="center">Speeds up development</h5>
-
-                        <p class="light">We did most of the heavy lifting for you to provide a default stylings that incorporate our custom components. Additionally, we refined animations and transitions to provide a smoother experience for developers.</p>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Registrarse</h3>
+                            <p>Ingresar a la pagina, clickear sobre el boton registrarse, complertar mail y numero de socio, y recibir confirmacion en el mail. Felecitaciones! es un usuaio logueado.</p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="col s12 m4 ">
-                    <div class="icon-block">
-
-                        <h5 class="center">User Experience Focused</h5>
-
-                        <p class="light">By utilizing elements and principles of Material Design, we were able to create a framework that incorporates components and animations that provide more feedback to users. Additionally, a single underlying responsive system across
-                            all platforms allow for a more unified user experience.</p>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <div class="caption">
+                            <h3>Pide un turno</h3>
+                            <p>Ingresando como usuario registrado, debera seleccionar la guardia de preferencia, luego aceptar turno. Feleicidades ya tienes tu turno.</p>
+                        </div>
                     </div>
                 </div>
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
 
-                <div class="col s12 m4 ">
-                    <div class="icon-block">
-
-                        <h5 class="center">Easy to work with</h5>
-
-                        <p class="light">We have provided detailed documentation as well as specific code examples to help new users get started. We are also always open to feedback and can answer any questions a user may have about Materialize.</p>
+                        <div class="caption">
+                            <h3>Asistí</h3>
+                            <p>Ya en este momento, que su turno ha sido confirmado. Debera Asistir con 20 minutos de anticipiacion a la guardia Medica y prensentate en recepcion.</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -176,9 +105,8 @@
     </div>
 
 </main>
-<footer class="page-footer orange lighten-1">
+<footer class="footer">
     <div class="container">
-        <div class="row ">
-            <a class="waves-effect waves-light btn-large col s4 offset-s4">Registrate</a>
-        </div>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Empezar</a>
+    </div>
 </footer>

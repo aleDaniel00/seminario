@@ -1,1 +1,2 @@
-angular.module('turnosApp', ['ui.materialize']);
+angular
+    .module('turnosApp', ['ngSanitize', 'ngRoute', 'ngAnimate', 'ngTouch', 'ui.bootstrap']);
