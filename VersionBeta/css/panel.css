@@ -1,0 +1,166 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+.logo-img {
+    padding: 30px 0 0 0px;
+    margin-left: 17px !important;
+}
+.sidebar-brand {
+    margin-bottom: 85px;
+}
+.side-icon .material-icons {
+    margin-top: 15px;
+    font-size: 2.5em;
+    margin-left: -39px;
+}
+.side-icon {
+    width: 90px;
+    margin-left: 35px;
+    text-align: center;
+}
+.margin-icon {
+    margin-top: -20px;
+}
+/* btn toggle */
+.sub-menu {
+    margin-top: -20px;
+    padding: 10px 0px 0px 20px !important;
+    font-size: 16px;
+    cursor:pointer;
+  //  opacity: 0.0;
+
+}
+/* fin btn toggle */
+
+.col .well h1 {
+    color: #7b7878;
+    text-align: center;
+    width: 100%;
+    margin-left: 0px;
+    margin-top: -20px;
+}
+.well {
+    background-color: white;
+    border: 0px solid #e3e3e3;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 19px;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.sub-nav {
+    margin-top: 50px;
+    border: 0px solid;
+    border-radius: 0px;
+    box-shadow: 0 0px 0px rgba(0, 0, 0, 0.0) inset;
+    margin-bottom: 20px;
+    min-height: 40px;
+    background: #f3f3f3;
+    padding: 10px 20px 10px 20px !important;
+    font-size: 16px;
+}
+.sub-nav span:first-child {
+    color: #a8a8a8;
+}
+.sub-nav span:last-child {
+    color: #686868;
+}
+.cont-tittle {
+    margin-top: -50px;
+    padding: 0px 0px 0px 0px !important;
+    font-size: 30px;
+    text-align: center;
+    color: #414141;
+}
+.cont-time {
+    margin-top: -20px;
+    margin-bottom: 20px;
+    min-height: 50px;
+    padding: 0px 0px 0px 0px !important;
+    font-size: 7.0em;
+    text-align: center;
+    font-weight: bold;
+    color: #414141;
+}
+.cont-desc {
+    margin-top: -10px;
+    padding: 0px 0px 0px 0px !important;
+    font-size: 18px;
+    text-align: center;
+    color: #878787;
+}
+.cont-desc span {
+    margin: 0 auto;
+    width: 50%;
+    display: block;
+}
+.cont-button {
+    text-align: center;
+}
+
+/** Estilos boton asistencia **/
+
+.btn-asistencia {
+    color: #D2F6FC;
+    background-color: #10B3CC;
+    border-color: #0BA1B8;
+    font-size: 20px;
+}
+.btn-asistencia:hover,
+.btn-asistencia:focus,
+.btn-asistencia:active,
+.btn-asistencia.active,
+.open .dropdown-toggle.btn-asistencia {
+    color: #D2F6FC;
+    background-color: #0C96AB;
+    border-color: #0BA1B8;
+}
+.btn-asistencia:active,
+.btn-asistencia.active,
+.open .dropdown-toggle.btn-asistencia {
+    background-image: none;
+}
+.btn-asistencia.disabled,
+.btn-asistencia[disabled],
+fieldset[disabled] .btn-asistencia,
+.btn-asistencia.disabled:hover,
+.btn-asistencia[disabled]:hover,
+fieldset[disabled] .btn-asistencia:hover,
+.btn-asistencia.disabled:focus,
+.btn-asistencia[disabled]:focus,
+fieldset[disabled] .btn-asistencia:focus,
+.btn-asistencia.disabled:active,
+.btn-asistencia[disabled]:active,
+fieldset[disabled] .btn-asistencia:active,
+.btn-asistencia.disabled.active,
+.btn-asistencia[disabled].active,
+fieldset[disabled] .btn-asistencia.active {
+    background-color: #10B3CC;
+    border-color: #0BA1B8;
+}
+.btn-asistencia .badge {
+    color: #10B3CC;
+    background-color: #D2F6FC;
+}
+
+/** FIN Estilos boton asistencia **/
+
+.well .top-nav{
+    display: block;
+    width: 100%;
+ max-height: 10px;
+    padding:0px !important;
+    background: red;
+    font-size: 50px;
+    position: absolute;
+
+margin: 0px;
+}
+
+
+div#myModal {
+    background: black;
+}
