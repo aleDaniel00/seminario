@@ -20,6 +20,8 @@ div#bs-example-navbar-collapse-1 {
 
 header > nav  ul.nav > li > a {
     margin: 22px;
+    outline: none;
+    border: 1px solid #f8f8f8;
 }
 
 .navbar-default .navbar-nav>li>a >span:first-of-type {
