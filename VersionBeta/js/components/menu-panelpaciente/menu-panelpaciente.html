@@ -1,0 +1,63 @@
+<div layout="column" style="height: 500px;" ng-cloak="" class="sidenavdemoCustomSidenav">
+
+    <section layout="row" flex="">
+
+        <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop="" md-whiteframe="4">
+
+            <md-toolbar class="md-theme-dark">
+                <h1 class="md-toolbar-tools"><img src="img/logo.png" alt=""></h1>
+                <md-button ng-click="toggleLeft()" class="md-accent">
+                    <i class="material-icons">&#xE5CD;</i>
+                </md-button>
+            </md-toolbar>
+
+            <md-content layout-margin="">
+                <menu-panelturnos></menu-panelturnos>
+            </md-content>
+
+        </md-sidenav>
+
+        <md-content flex="" layout-padding="">
+            <div>
+                <md-button ng-click="toggleLeft()" class="md-raised">
+                    <i class="material-icons">&#xE5D2;</i>
+                </md-button>
+            </div>
+            <div layout="column" layout-align="top center">
+                <!-- #col -->
+                <div class="col">
+                    <div class="well">
+                        <h1>Solicitar turno</h1>
+                        <div class="well sub-nav"><span>Centros médicos ></span> <span>Tiempo estimado</span> </div>
+                    </div>
+                    <div class="well cont-tittle">
+                        <span>El tiempo para tu turno en la guardia</span>
+                    </div>
+                    <div class="well cont-time">
+                        <span>03:02:05</span>
+                    </div>
+                    <div class="well cont-desc">
+                        <span>
+                    Si estas deacuerdo con el tiempo para tu turno, presiona el botón de confirmar asistencia. 
+                    Si no es así puedes <strong>cambiar centro médico</strong>.
+                </span>
+                    </div>
+
+                    <div class="well cont-button">
+                        <button type="button" class="btn btn-asistencia">Confirmar asistencia</button> <span>ò</span>
+                        <button type="button" class="btn btn-default btn-lg">Cambiar centro Medico</button>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <!-- /#col -->
+
+</div>
+</div>
+</md-content>
+
+</section>
+
+</div>

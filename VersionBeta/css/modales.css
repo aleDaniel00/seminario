@@ -1,0 +1,148 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.modal-content {
+    /* width: 200px; */
+    /* width:70%; */
+}
+
+modal-login .form-tittle,modal-registro .form-tittle {
+    text-align: center;
+    width: 100%;
+    margin: 77px 0;
+}
+
+.form-tittle1 h2 {
+    font-size: 32px !important;
+    color: #a8a8a8 !important;
+}
+
+.form-tittle2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 60px;
+    width: 100%;
+    color: #a8a8a8;
+}
+
+.form-tittle3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 60px;
+    width: 100%;
+    color: #a8a8a8;
+}
+
+.form-tittle4 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    height: 120px;
+    width: 100%;
+    color: #a8a8a8;
+    text-align: center;
+}
+
+.form-tittle4 p {
+    color: #a8a8a8;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form-tittle4 p a:active, .form-tittle4 p a:visited, .form-tittle4 p a:link {
+    color: #2db6cd;
+}
+
+modal-login .form-group ,modal-registro .form-group {
+    text-align: center;
+    margin: 20px auto;
+    width: 85%;
+}
+
+.form-group label {
+    float: left;
+}
+
+.modal-content {
+    /* border-radius: 0px; */
+}
+
+.btn-login {
+    color: #B2EBF2;
+    background-color: #00BCD4;
+    border-color: #0799B0;
+    font-size: 20px;
+}
+
+.btn-login:hover, .btn-login:focus, .btn-login:active, .btn-login.active, .open .dropdown-toggle.btn-login {
+    color: #E0F7FA;
+    background-color: #00ACC1;
+    border-color: #0799B0;
+}
+
+.btn-login:active, .btn-login.active, .open .dropdown-toggle.btn-login {
+    background-image: none;
+}
+
+.btn-login.disabled, .btn-login[disabled], fieldset[disabled] .btn-login, .btn-login.disabled:hover, .btn-login[disabled]:hover, fieldset[disabled] .btn-login:hover, .btn-login.disabled:focus, .btn-login[disabled]:focus, fieldset[disabled] .btn-login:focus, .btn-login.disabled:active, .btn-login[disabled]:active, fieldset[disabled] .btn-login:active, .btn-login.disabled.active, .btn-login[disabled].active, fieldset[disabled] .btn-login.active {
+    background-color: #00B8D4;
+    border-color: #0799B0;
+}
+
+.btn-login .badge {
+    color: #00B8D4;
+    background-color: #006A7A;
+}
+
+
+.input-group-lg>.form-control {
+    padding: 25px 14px;
+    font-size: 2rem;
+    border-radius: 4px;
+    border: none;
+    border-bottom: 3px solid #e4e4e4;
+    outline: none;
+    box-shadow: none;
+}
+
+modal-login .form-olvido , modal-registro .form-olvido {
+    margin: 101px auto;
+    width: 87%;
+    text-align: center;
+}
+modal-registro .form-olvido p{
+    color: #9d9d9d;
+}
+.container-fluid.form-olvido > p > a {
+    font-size: 1.5rem;
+    color: rgba(0, 184, 212, 0.64);
+}
+
+modal-login .container-fluid.form-btn-ingresar, 
+modal-registro .container-fluid.form-btn-ingresar {
+    margin: 50px auto;
+    text-align: center;
+}
+
+modal-login .container-fluid.form-btn-ingresar > button, modal-registro .container-fluid.form-btn-ingresar> button{
+    padding: 6px 52px;
+    border: none;
+}
+
+
+
+.container-fluid.form-olvido > p > a:hover {
+    text-decoration: none;
+    color: #00BCD4;
+}
+
+modal-login.ng-scope.ng-isolate-scope {
+}
+
+.modal-dialog {
+    /* width: 27%; */
+}
+
+modal-login h2 {
+    color: dimgrey;
+}

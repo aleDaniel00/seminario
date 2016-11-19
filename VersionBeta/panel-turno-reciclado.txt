@@ -1,0 +1,106 @@
+panel-turno-reciclado
+ <div id="wrapper">
+
+    <!-- Sidebar -->
+    <div id="sidebar-wrapper">
+        <ul class="sidebar-nav">
+
+            <li class="sidebar-brand">
+
+                <a href="www.google.com">
+                    <img class="logo-img" src="img/logo.png" width="90" alt="logo" />
+                </a>
+
+            </li>
+            <li>
+                <a href="#" class="active">
+                    <div class="side-icon">
+                        <i class="material-icons">access_time</i>
+                        <div class="margin-icon"></div>
+                        <span class="txt-menu">Turno</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="side-icon">
+                        <i class="material-icons">comment</i>
+                        <div class="margin-icon"></div>
+                        <span class="txt-menu">Mensajes</span>
+                    </div>
+                </a>
+
+            </li>
+            <li>
+                <a href="#">
+                    <div class="side-icon">
+                        <i class="material-icons">person</i>
+                        <div class="margin-icon"></div>
+                        <span class="txt-menu">Perfíl</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <div class="side-icon">
+                        <i class="material-icons">local_hospital</i>
+                        <div class="margin-icon"></div>
+                        <span class="txt-menu">Guardia</span>
+                    </div>
+                </a>
+            </li>
+
+
+        </ul>
+    </div>
+    <!-- /#sidebar-wrapper -->
+
+    <!-- #col -->
+    <div class="col">
+        <div class="well">
+
+            <div class="well sub-menu"><i id="menu-toggle" class="material-icons">menu</i></div>
+            <h1>Solicitar turno</h1>
+
+            <div class="well sub-nav"><span>Centros médicos ></span> <span>Tiempo estimado</span> </div>
+        </div>
+        <div class="well cont-tittle">
+            <span>El tiempo para tu turno en la guardia</span>
+        </div>
+        <div class="well cont-time">
+            <span>03:02:05</span>
+        </div>
+        <div class="well cont-desc">
+            <span>
+                    Si estas deacuerdo con el tiempo para tu turno, presiona el botón de confirmar asistencia. 
+                    Si no es así puedes <strong>cambiar centro médico</strong>.
+                </span>
+        </div>
+
+        <div class="well cont-button">
+            <button type="button" class="btn btn-asistencia">Confirmar asistencia</button> <span>ò</span>
+            <button type="button" class="btn btn-default btn-lg">Cambiar centro Medico</button>
+        </div>
+
+
+    </div>
+
+</div>
+<!-- /#col -->
+
+</div>
+<!-- /#wrapper -->
+
+<!-- jQuery -->
+<!--  <script src="js/jquery.js"></script>-->
+
+<!-- Bootstrap Core JavaScript -->
+<!-- <script src="js/bootstrap.min.js"></script>-->
+
+<!-- Menu Toggle Script -->
+<script>
+    $("#menu-toggle").click(function(e) {
+        e.preventDefault();
+        $("#wrapper").toggleClass("toggled");
+    });
+</script>

@@ -1,74 +1,38 @@
-function conPrinController($uibModal, $log, $document) {
+function contenedorPrincipalCtrl($uibModal, $log, $document) {
     var $ctrl = this;
     $ctrl.items = ['item1', 'item2', 'item3'];
-
     $ctrl.animationsEnabled = true;
-
-    $ctrl.open = function(size, parentSelector) {
-        var parentElem = parentSelector ?
-            angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+    $ctrl.openComponentModalLogin = function() {
         var modalInstance = $uibModal.open({
             animation: $ctrl.animationsEnabled,
-            ariaLabelledBy: 'modal-title',
-            ariaDescribedBy: 'modal-body',
-            templateUrl: 'myModalContent.html',
-            controller: 'ModalInstanceCtrl',
-            controllerAs: '$ctrl',
-            size: size,
-            appendTo: parentElem,
+            component: 'modalLogin',
             resolve: {
                 items: function() {
                     return $ctrl.items;
                 }
             }
         });
-
         modalInstance.result.then(function(selectedItem) {
             $ctrl.selected = selectedItem;
         }, function() {
-            $log.info('Modal dismissed at: ' + new Date());
+            $log.info('modal-login dismissed at: ' + new Date());
         });
     };
 
-    $ctrl.openComponentModal = function() {
+    $ctrl.openComponentModalRegistro = function() {
         var modalInstance = $uibModal.open({
             animation: $ctrl.animationsEnabled,
-            component: 'modalComponent',
+            component: 'modalRegistro',
             resolve: {
                 items: function() {
                     return $ctrl.items;
                 }
             }
         });
-
         modalInstance.result.then(function(selectedItem) {
             $ctrl.selected = selectedItem;
         }, function() {
-            $log.info('modal-component dismissed at: ' + new Date());
-        });
-    };
-
-    $ctrl.openMultipleModals = function() {
-        $uibModal.open({
-            animation: $ctrl.animationsEnabled,
-            ariaLabelledBy: 'modal-title-bottom',
-            ariaDescribedBy: 'modal-body-bottom',
-            templateUrl: 'stackedModal.html',
-            size: 'sm',
-            controller: function($scope) {
-                $scope.name = 'bottom';
-            }
-        });
-
-        $uibModal.open({
-            animation: $ctrl.animationsEnabled,
-            ariaLabelledBy: 'modal-title-top',
-            ariaDescribedBy: 'modal-body-top',
-            templateUrl: 'stackedModal.html',
-            size: 'sm',
-            controller: function($scope) {
-                $scope.name = 'top';
-            }
+            $log.info('modal-registro dismissed at: ' + new Date());
         });
     };
 
@@ -76,8 +40,9 @@ function conPrinController($uibModal, $log, $document) {
         $ctrl.animationsEnabled = !$ctrl.animationsEnabled;
     };
 }
+
 angular.module('turnosApp')
     .component('contenedorPrincipal', {
         templateUrl: './js/components/contenedor-principal/contenedor-principal.html',
-        controller: conPrinController
+        controller: contenedorPrincipalCtrl
     });

@@ -1,37 +1,46 @@
+body{
+   font-family: 'Roboto', sans-serif;
+}
 .navbar-brand>img {
-    width: 52%;
-    margin-left: 25px;
+    width: 50px;
+    margin: 12px 7px;
+    display: inline-block;
 }
 
 contenedor-principal header nav.navbar.navbar-default {
     min-height: 94px;
     background: white;
-    border-bottom: 4px solid #1398ad;
+    /* border-bottom: 2px solid #ff9933; */
     margin: 0;
 }
 
-.container-fluid {
-    /* height: 136px; */
+main .container-fluid {
+    height: auto;
 }
 
 div#bs-example-navbar-collapse-1 {
     /* min-height: 135px; */
 }
 
-header > nav  ul.nav > li > a {
-    margin: 22px;
+header>nav ul.nav>li>a {
+    margin: 6px;
     outline: none;
-    border: 1px solid #f8f8f8;
+    transition: all 1s;
+    cursor: pointer;
+    border-radius: 6px;
 }
 
-.navbar-default .navbar-nav>li>a >span:first-of-type {
+.navbar-default .navbar-nav>li>a>span:first-of-type {
     display: block;
     text-align: center;
-    margin: 13px 0;
+    margin: 7px 0;
+    color: #065d6b;
 }
 
-a.navbar-brand {
-    margin: 38px;
+header a.navbar-brand {
+    /* margin: 0; */
+    width: 193px;
+    /* height: 100%; */
 }
 
 footer.footer {
@@ -41,18 +50,20 @@ footer.footer {
     background-color: #ff9933;
 }
 
-footer  .jumbotron {
+footer .jumbotron {
     margin: 0;
     padding: 18px;
 }
 
-footer .container {padding: 1px;}
+footer .container {
+    padding: 1px;
+}
 
-footer.footer >div.container > a {
+footer.footer>div.container>a {
     margin: 58px auto;
 }
 
-footer.footer > div.container {
+footer.footer>div.container {
     /* width: 100%; */
     text-align: center;
 }
@@ -68,13 +79,16 @@ main .jumbotron {
 footes .container {}
 
 main .thumbnail p {
-    color: #8d8d8d;
-    font-size: 2rem;
+    color: #afafaf;
+    font-weight: 300;
+    font-size: 1.7rem;
+    text-align: center;
 }
 
 main .thumbnail h3 {
     margin: 25px 0;
-    color: #747474;
+    color: #868686;
+    text-align: center;
 }
 
 a.btn.btn-primary.btn-lg {
@@ -86,23 +100,142 @@ a.btn.btn-primary.btn-lg {
 
 main .section {
     /* background: red; */
-    margin: 90px 0px;
+    margin: 66px 0px;
 }
 
 i.material-icons {
-    font-size: 4rem;
+    /* font-size: 4rem; */
 }
 
-.container-fluid.slide {
-    background: #e5e5e5;
+main .container-fluid.slide {
+    background: #00acc1;
+    background-position: 66% 0;
+    zoom: 100%;
+    background-size: contain;
+    color: rgb(246, 246, 246);
+    padding: 0;
 }
 
 .slide .jumbotron {
     background: rgba(107, 224, 244, 0);
+    padding: 53px 23px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 nav.navbar.navbar-default {}
 
 main .section .row {
     margin: 100px 0;
+    /* margin-top: 0; */
+}
+
+.sizing-addon1 {
+    font-size: 2rem;
+    color: rgb(228, 228, 228);
+    background: white;
+    border-radius: 2px;
+    border: none;
+    border-bottom: 3px solid;
+    padding: 0 21px;
+}
+
+.input-group .form-control:focus {
+    border-color: #8b8b8b;
+    box-shadow: none;
+}
+
+contenedor-principal>header>.navbar>.container>collapse>.nav>li>a:hover {
+    background: red;
+}
+
+contenedor-principal .container-fluid.form-olvido>p>a:hover {}
+
+contenedor-principal .navbar-default .navbar-nav>li>a:hover {
+    background: #f6f6f6;
+    transition: all 1s;
+}
+
+a {}
+
+main h2.text-center {
+    color: #767676;
+    font-size: 4rem;
+}
+
+main .container .jumbotron p {
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+main>.container>.section>.row>.col-sm-6.col-md-4 {
+    padding: 0;
+}
+
+contenedor-principal button.navbar-toggle.collapsed {
+    padding: 13px;
+    margin: 25px;
+    background-color: white;
+    border: none;
+}
+
+contenedor-principal button.navbar-toggle.collapsed:hover {
+    background-color: #f4f4f4;
+}
+
+.slide .container {
+    padding: 0;
+    /* width: 100%; */
+    background: url(../img/fondoJumbotron.png) no-repeat;
+}
+
+main .section .bs-callout.bs-callout-danger {
+    padding: 10px;
+}
+
+.bs-callout.bs-callout-danger>h2 {
+    color: #ff9933;
+    background: #f6f6f6;
+    border-left: 2px solid;
+    padding: 26px 19px;
+    border-right: 2px solid;
+    text-align: center;
+}
+
+header>nav ul.nav>li>a>span:last-of-type {
+    color: #1398ad;
+    font-weight: 400;
+    font-size: 1.6rem;
+}
+
+.close>span>i.material-icons {
+    padding: 11px;
+}
+
+i.material-icons {}
+
+.navbar-brand>span {
+    display: inline-block;
+    width: 10px;
+    margin: 0px 2px;
+    vertical-align: middle;
+    color: #449faf;
+}
+
+.slide .jumbotron > div {
+    border-left: 2px solid white;
+    padding-left: 30px;
+}
+
+.jumbotron h1 {
+    font-weight: 100;
+    font-size: 5.5rem;
+}
+
+menu-panelpaciente md-sidenav.md-sidenav-left.ng-isolate-scope._md.md-whiteframe-4dp {
+    max-width: 200px;
+}
+
+md-toolbar.md-theme-grey._md._md-toolbar-transitions {
+    background: white;
 }
