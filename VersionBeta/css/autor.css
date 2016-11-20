@@ -256,6 +256,8 @@ md-toolbar {
 
 md-toolbar.md-theme-dark._md._md-toolbar-transitions {
     text-align: right;
+    height: 153px;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 h1.md-toolbar-tools {
@@ -263,21 +265,21 @@ h1.md-toolbar-tools {
     width: 100%;
     margin: 0 auto;
     display: block;
-    padding: 28px 0;
+    padding: 47px 0;
 }
 
 button.md-fab.md-button.md-ink-ripple {
     position: absolute;
     right: 0;
-    width: 37px;
-    height: 4px;
-    color: rgba(245, 245, 245, 0.52) !important;
-    border: none;
-    background: rgb(3, 169, 244);
-    border: 1px solid;
-    text-align: center;
-    padding: 0;
-    margin: 5px;
+    top: 16%;
+    /* height: 4px; */
+    /* color: rgba(245, 245, 245, 0.52) !important; */
+    /* border: none; */
+    background: rgb(95, 93, 93);
+    /* border: 1px solid; */
+    /* text-align: center; */
+    /* padding: 0; */
+    /* margin: 5px; */
 }
 
 md-toolbar i.material-icons {
@@ -311,4 +313,34 @@ menu-panelpaciente .layout-column .col {
 
 menu-panelpaciente > div >section md-content._md > div {
     /* background: red; */
+}
+
+menu-panelturnos .md-list-item-inner {
+    display: block;
+    text-align: center;
+    height: 117px;
+}
+
+a.md-no-style.md-button.md-ink-ripple {
+}
+
+p {}
+
+span.md-icon-button.md-primary {}
+
+menu-panelturnos .md-list-item-inner > p {
+    font-size: 2rem;
+    color: #c6c6c6;
+}
+
+md-content.layout-margin._md {
+    margin: 0;
+}
+
+md-icon.ng-scope.material-icons {
+    color: white !important;
+}
+
+button.md-fab.md-button.md-ink-ripple:hover {
+    background-color: #727272;
 }

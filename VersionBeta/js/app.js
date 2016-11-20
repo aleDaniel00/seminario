@@ -21,6 +21,10 @@ angular
                     // Le indicamos el template que queremos usar.
                     'templateUrl': 'views/panelTurno.html'
                 })
+                .when('/panelTurno/turno', {
+                    // Le indicamos el template que queremos usar.
+                    'templateUrl': 'views/turno.html'
+                })
                 .otherwise('/');
         }
     ])
@@ -31,10 +35,3 @@ angular
             .iconSet('communication', 'img/icons/sets/communication-icons.svg', 24)
             .defaultIconSet('img/icons/sets/core-icons.svg', 24);
     })
-    .config(function($mdThemingProvider) {
-        $mdThemingProvider.theme('default')
-            .primaryPalette('light-blue')
-            .accentPalette('blue-grey');
-
-        //$mdThemingProvider.disableTheming();
-    });

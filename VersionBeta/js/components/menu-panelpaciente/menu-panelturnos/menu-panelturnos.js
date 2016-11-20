@@ -8,7 +8,7 @@ angular.module('turnosApp')
                 { name: 'Perfil', img: 'img/account-outline.svg', newMessage: false },
                 { name: 'Guardia', img: 'img/stethoscope.svg', newMessage: false }
             ];
-            $scope.showTabDialog = function(ev) {
+            $scope.showTabDialog3 = function(ev) {
                 $mdDialog.show({
                         template: '<abm-user></abm-user>',
                         parent: angular.element(document.body),
@@ -23,5 +23,12 @@ angular.module('turnosApp')
             };
 
 
+
         }
+    })
+    .config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .dark();
+
+        //$mdThemingProvider.disableTheming();
     });

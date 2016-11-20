@@ -6,12 +6,11 @@
 
             <md-toolbar class="md-theme-dark">
                 <h1 class="md-toolbar-tools"><img src="img/logo.png" alt=""></h1>
-                <md-button class="md-fab" ng-click="toggleLeft()" aria-label="Eat cake">
-                    <md-icon> <i class="material-icons">&#xE5CD;</i></md-icon>
-                </md-button>
-
             </md-toolbar>
 
+            <md-button class="md-fab md-mini" ng-click="toggleLeft()" aria-label="Eat cake">
+                <md-icon md-svg-src="img/icons/left.svg"></md-icon>
+            </md-button>
             <md-content layout-margin="">
                 <menu-panelturnos></menu-panelturnos>
             </md-content>
@@ -19,9 +18,9 @@
         </md-sidenav>
 
         <md-content flex="" layout-padding="">
-            <section layout="row" layout-sm="column" layout-align="left left" layout-wrap>
-                <md-button ng-click="toggleLeft()" class="md-fab md-primary">
-                    <i class="material-icons">&#xE5D2;</i>
+            <section layout="col" layout-sm="column" layout-align="left center" layout-wrap="">
+                <md-button class="md-icon-button" ng-click="toggleLeft()" aria-label="More">
+                    <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
                 </md-button>
             </section>
             <div layout="column" layout-align="top center">
