@@ -1,1 +1,0 @@
- php -d  suhosin.executor.include.whitelist=phar composer.phar comandos php -d  suhosin.executor.include.whitelist=phar composer-setup.php

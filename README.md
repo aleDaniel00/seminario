@@ -1,2 +1,0 @@
-# seminario
-turnos-app

@@ -1,3 +1,0 @@
-[30-Sep-2016 17:22:51 America/New_York] PHP Parse error:  syntax error, unexpected '$consulta' (T_VARIABLE) in /home/turncbct/public_html/test.php on line 8
-[30-Sep-2016 17:23:29 America/New_York] PHP Parse error:  syntax error, unexpected '$consulta' (T_VARIABLE) in /home/turncbct/public_html/test.php on line 8
-[30-Sep-2016 17:25:38 America/New_York] PHP Warning:  mysqli_connect(): (HY000/1044): Access denied for user 'turncbct_root'@'localhost' to database 'turncbct_turnos' in /home/turncbct/public_html/test.php on line 5
