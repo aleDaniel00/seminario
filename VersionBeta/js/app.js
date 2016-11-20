@@ -5,7 +5,8 @@ angular
         'ngAnimate',
         'ngTouch',
         'ui.bootstrap',
-        'ngMaterial'
+        'ngMaterial',
+        'widget.scrollbar'
     ])
     .config([
         '$routeProvider',
@@ -32,5 +33,8 @@ angular
     })
     .config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
-            .dark();
+            .primaryPalette('light-blue')
+            .accentPalette('blue-grey');
+
+        //$mdThemingProvider.disableTheming();
     });

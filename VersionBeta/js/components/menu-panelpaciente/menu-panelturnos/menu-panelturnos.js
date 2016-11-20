@@ -2,72 +2,26 @@ angular.module('turnosApp')
     .component('menuPanelturnos', {
         templateUrl: './js/components/menu-panelpaciente/menu-panelturnos/menu-panelturnos.html',
         controller: function($scope, $mdDialog) {
-            $scope.toppings = [
-                { name: 'Pepperoni', wanted: true },
-                { name: 'Sausage', wanted: false },
-                { name: 'Black Olives', wanted: true },
-                { name: 'Green Peppers', wanted: false }
+            $scope.items = [
+                { name: 'Turno', img: 'img/clock.svg', newMessage: true },
+                { name: 'Mensajes', img: 'img/message-text-outline.svg', newMessage: false },
+                { name: 'Perfil', img: 'img/account-outline.svg', newMessage: false },
+                { name: 'Guardia', img: 'img/stethoscope.svg', newMessage: false }
             ];
-
-            $scope.settings = [
-                { name: 'Wi-Fi', extraScreen: 'Wi-fi menu', icon: 'device:network-wifi', enabled: true },
-                { name: 'Bluetooth', extraScreen: 'Bluetooth menu', icon: 'device:bluetooth', enabled: false },
-            ];
-
-            $scope.messages = [
-                { id: 1, title: "Message A", selected: false },
-                { id: 2, title: "Message B", selected: true },
-                { id: 3, title: "Message C", selected: true },
-            ];
-
-            $scope.people = [
-                { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
-                { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
-                { name: 'Peter Carlsson', img: 'img/100-2.jpeg', newMessage: false }
-            ];
-
-            $scope.goToPerson = function(person, event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                    .title('Navigating')
-                    .textContent('Inspect ' + person)
-                    .ariaLabel('Person inspect demo')
-                    .ok('Neat!')
-                    .targetEvent(event)
-                );
+            $scope.showTabDialog = function(ev) {
+                $mdDialog.show({
+                        template: '<abm-user></abm-user>',
+                        parent: angular.element(document.body),
+                        targetEvent: ev,
+                        clickOutsideToClose: true
+                    })
+                    .then(function(answer) {
+                        $scope.status = 'You said the information was "' + answer + '".';
+                    }, function() {
+                        $scope.status = 'You cancelled the dialog.';
+                    });
             };
 
-            $scope.navigateTo = function(to, event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                    .title('Navigating')
-                    .textContent('Imagine being taken to ' + to)
-                    .ariaLabel('Navigation demo')
-                    .ok('Neat!')
-                    .targetEvent(event)
-                );
-            };
 
-            $scope.doPrimaryAction = function(event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                    .title('Primary Action')
-                    .textContent('Primary actions can be used for one click actions')
-                    .ariaLabel('Primary click demo')
-                    .ok('Awesome!')
-                    .targetEvent(event)
-                );
-            };
-
-            $scope.doSecondaryAction = function(event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                    .title('Secondary Action')
-                    .textContent('Secondary actions can be used for one click actions')
-                    .ariaLabel('Secondary click demo')
-                    .ok('Neat!')
-                    .targetEvent(event)
-                );
-            }
         }
     });

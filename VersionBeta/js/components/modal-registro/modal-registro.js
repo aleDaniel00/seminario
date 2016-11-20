@@ -5,7 +5,7 @@ angular.module('turnosApp').component('modalRegistro', {
         close: '&',
         dismiss: '&'
     },
-    controller: function() {
+    controller: function(PacientesService) {
         var $ctrl = this;
 
 
@@ -27,6 +27,18 @@ angular.module('turnosApp').component('modalRegistro', {
             $ctrl.dismiss({ $value: 'cancel' });
         };
 
+        $ctrl.createUser = function() {
+            console.log($ctrl.proyecto);
+            PacientesService.createUser($ctrl.proyecto).then(
+                function(rta) {
+                    console.log(rta.data);
+
+                },
+                function(rta) {
+                    console.log(rta.data);;
+                }
+            );
+        }
 
     }
 });

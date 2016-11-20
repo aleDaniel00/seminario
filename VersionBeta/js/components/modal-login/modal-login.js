@@ -5,7 +5,7 @@ angular.module('turnosApp').component('modalLogin', {
         close: '&',
         dismiss: '&'
     },
-    controller: function() {
+    controller: function(PacientesService) {
         var $ctrl = this;
         $ctrl.items = ['item1', 'item2', 'item3'];
 
@@ -26,6 +26,35 @@ angular.module('turnosApp').component('modalLogin', {
         $ctrl.cancel = function() {
             $ctrl.dismiss({ $value: 'cancel' });
         };
+        /*
+         *
+         */
+
+        /* PacientesService.traerPorPut().then(
+             function(rta) {
+                 console.log(rta.data);
+
+             },
+             function(rta) {
+                 console.log(rta.data);
+
+             }
+         );*/
+
+        $ctrl.login = function() {
+            console.log($ctrl.proyecto);
+
+            PacientesService.login($ctrl.proyecto).then(
+                function(rta) {
+                    console.log(rta);
+                    console.log(rta.data.Token);
+                    localStorage.setItem("token", rta.data.Token);
+                },
+                function(rta) {
+                    console.log(rta.data);;
+                }
+            );
+        }
 
 
     }

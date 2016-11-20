@@ -2,7 +2,7 @@
 <div class="close">
     <span><i class="material-icons" ng-click="$ctrl.cancel()">&#xE5CD;</i></span>
 </div>
-<form class="form-login" action="#/panelTurno" method="POST">
+<form class="form-login" ng-submit="$ctrl.login(proyecto)" novalidate>
 
     <div class="form-tittle">
         <h2>Ingresar</h2>
@@ -12,7 +12,7 @@
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon sizing-addon1"><i class="material-icons">perm_identity</i></span>
-                <input type="text" class="form-control" placeholder="Usuario" aria-describedby="sizing-addon1">
+                <input type="email" class="form-control" ng-model="$ctrl.proyecto.User" placeholder="Usuario" aria-describedby="sizing-addon1">
             </div>
         </div>
     </div>
@@ -21,16 +21,16 @@
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE899;</i></span>
-                <input type="password" class="form-control" placeholder="Contraseña" aria-describedby="sizing-addon1">
+                <input type="password" class="form-control" ng-model="$ctrl.proyecto.Password" placeholder="Contraseña" aria-describedby="sizing-addon1">
             </div>
         </div>
     </div>
+
     <div class="container-fluid form-olvido">
         <p><a href="">&iquest;Olvidaste la contrase&ntilde;a?</a></p>
-
     </div>
-    <div class="container-fluid form-btn-ingresar">
 
+    <div class="container-fluid form-btn-ingresar">
         <button type="submit" class="btn btn-login">Ingresar</button>
     </div>
 

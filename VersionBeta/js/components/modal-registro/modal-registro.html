@@ -2,7 +2,7 @@
 <div class="close">
     <span><i class="material-icons" ng-click="$ctrl.cancel()">&#xE5CD;</i></span>
 </div>
-<form class="form-registro" action="registrate.html" method="POST">
+<form class="form-registro" ng-submit="$ctrl.createUser(proyecto)" novalidate>
 
     <div class="form-tittle">
         <h2>Registrarme</h2>
@@ -12,7 +12,7 @@
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE0BE;</i></span>
-                <input type="text" class="form-control" placeholder="Email" aria-describedby="sizing-addon1">
+                <input type="email" class="form-control" ng-model="$ctrl.proyecto.Email" placeholder="Email" aria-describedby="sizing-addon1">
             </div>
         </div>
     </div>
@@ -21,10 +21,20 @@
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE2C9;</i></span>
-                <input type="text" class="form-control" placeholder="Numero de Socio" aria-describedby="sizing-addon1">
+                <input type="password" class="form-control" ng-model="$ctrl.proyecto.Password" placeholder="Contraseña" aria-describedby="sizing-addon1">
             </div>
         </div>
     </div>
+
+    <div class="container-fluid box-input-autor">
+        <div class="form-group">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE2C9;</i></span>
+                <input type="number" class="form-control" ng-model="$ctrl.proyecto.NumeroSocio" placeholder="Numero de socio" aria-describedby="sizing-addon1">
+            </div>
+        </div>
+    </div>
+
 
     <div class="container-fluid form-olvido">
         <p>
