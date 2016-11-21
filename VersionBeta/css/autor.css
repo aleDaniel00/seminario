@@ -561,7 +561,7 @@ button.cancel.pull-left.md-button.md-ink-ripple {
 .cancel md-icon.md-secondary.md-hue-3.ng-scope {
     width: 38px;
     height: 28px;
-    background: #e4e4e4;
+    /* background: #e4e4e4; */
     margin: 0 9px 0 0;
 }
 
