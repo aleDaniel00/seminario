@@ -25,10 +25,4 @@ angular.module('turnosApp')
 
 
         }
-    })
-    .config(function($mdThemingProvider) {
-        $mdThemingProvider.theme('default')
-            .dark();
-
-        //$mdThemingProvider.disableTheming();
     });

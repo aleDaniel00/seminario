@@ -9,34 +9,41 @@
                 </md-button>
             </div>
         </md-toolbar>
-        <md-dialog-content style="max-width:800px;max-height:810px; " ng-scrolling>
+        <md-dialog-content style="max-width:600px;max-height:810px; " ng-scrolling>
             <md-tabs md-dynamic-height md-border-bottom>
                 <md-tab label="Editar">
-                    <md-content class="md-padding">
+                    <md-content class="row">
 
 
-                        <div layout="column" layout-padding ng-cloak>
+                        <div layout="column" layout-padding ng-cloak class='col-xs-12 col-md-12 box-group-input'>
 
                             <br/>
                             <md-content class="md-no-momentum">
-                                <md-input-container class="md-block">
-                                    <!-- Use floating placeholder instead of label -->
-                                    <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
-                                    <input ng-model="user.Nombre" type="text" placeholder="Nombre" ng-required="true">
-                                </md-input-container>
+                                <div class="container-fluid box-input-autor">
+                                    <div class="form-group">
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon sizing-addon1"><i class="material-icons">perm_identity</i></span>
+                                            <input type="text" class="form-control" ng-model="$ctrl.proyecto.Nombre" placeholder="Nombre" aria-describedby="sizing-addon1">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="container-fluid box-input-autor">
+                                    <div class="form-group">
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE0BE;</i></span>
+                                            <input type="email" class="form-control" ng-model="$ctrl.proyecto.Email" placeholder="Email" aria-describedby="sizing-addon1">
+                                        </div>
+                                    </div>
+                                </div>
 
-
-                                <md-input-container class="md-block">
-                                    <!-- Use floating placeholder instead of label -->
-                                    <md-icon md-svg-src="img/icons/ic_email_24px.svg" class="email"></md-icon>
-                                    <input ng-model="user.Email" type="email" placeholder="Email (requerido)" ng-required="true">
-                                </md-input-container>
-
-                                <md-input-container md-no-float class="md-block">
-                                    <label>Numero de Socio (requerido)</label>
-                                    <md-icon md-svg-src="img/icons/ic_phone_24px.svg"></md-icon>
-                                    <input ng-model="user.NumeroSocio" type="text" placeholder="####-####-####" ng-required="true">
-                                </md-input-container>
+                                <div class="container-fluid box-input-autor">
+                                    <div class="form-group">
+                                        <div class="input-group input-group-lg">
+                                            <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE0BE;</i></span>
+                                            <input type="number" class="form-control" ng-model="$ctrl.proyecto.NumeroSocio" placeholder="Numero de Socio" aria-describedby="sizing-addon1">
+                                        </div>
+                                    </div>
+                                </div>
 
                                 <!--<md-input-container md-no-float class="md-block">
                                     <label>Numero de Socio (requerido)</label>
@@ -55,13 +62,14 @@
 
         <md-dialog-actions layout="row">
 
-            <md-button ng-click="answer('not useful')">
+            <div class="col-xs-12 col-md-12 box-btns">
 
-                Cancelar
-            </md-button>
-            <button type="submit" style="margin-right:20px;">
-                Guardar
-            </button>
+                <md-button ng-click="answer('not useful')" class="cancel pull-left">
+                    <md-icon md-svg-icon="img/icons/close.svg" ng-click="navigateTo($event)" aria-label="Send Email" class="md-secondary md-hue-3"></md-icon>
+                    Cancelar
+                </md-button>
+                <button type="submit" class="btn btn-login save pull-right"><md-icon md-svg-icon="img/icons/content-save.svg" ng-click="navigateTo($event)" aria-label="Send Email" class="md-secondary md-hue-3"></md-icon> Guardar Cambios</button>
+            </div>
         </md-dialog-actions>
     </form>
 </md-dialog>

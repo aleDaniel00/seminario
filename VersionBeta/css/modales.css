@@ -72,12 +72,15 @@ modal-login .form-group ,modal-registro .form-group {
     background-color: #00BCD4;
     border-color: #0799B0;
     font-size: 20px;
+    margin: 12px;
 }
 
 .btn-login:hover, .btn-login:focus, .btn-login:active, .btn-login.active, .open .dropdown-toggle.btn-login {
-    color: #E0F7FA;
-    background-color: #00ACC1;
-    border-color: #0799B0;
+    color: #ffffff;
+    background-color: #169db3;
+    border-color: #1a7887;
+    outline: none;
+    margin: 12px;
 }
 
 .btn-login:active, .btn-login.active, .open .dropdown-toggle.btn-login {
