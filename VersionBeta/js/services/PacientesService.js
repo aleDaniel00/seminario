@@ -13,7 +13,7 @@ angular.module('turnosApp')
                     }*
                 }*/
 
-                return $http.post('http://turnos-app.com/v1/createUser', proyecto);
+                return $http.post('http://turnos-app.com/testapi/v1/createUser', proyecto);
             };
             this.updateUser = function(proyecto) {
                 var config = {
