@@ -1,7 +1,7 @@
 angular.module('turnosApp')
     .component('menuPanelpaciente', {
         templateUrl: './js/components/menu-panelpaciente/menu-panelpaciente.html',
-        controller: function($scope, $timeout, $mdSidenav, $mdDialog) {
+        controller: function($scope, $timeout, $mdSidenav, $mdDialog, CMedicosService) {
             $scope.toggleLeft = buildToggler('left');
             $scope.toggleRight = buildToggler('right');
 
@@ -13,8 +13,8 @@ angular.module('turnosApp')
             /*
              * el controller de el filtro ;) 
              */
-            $scope.isNavCollapsed = false;
-            $scope.isCollapsed = false;
+            $scope.isNavCollapsed = true;
+            $scope.isCollapsed = true;
 
             /*
              * el controller de el resultado de la busqueda (cards) ;) 
@@ -37,7 +37,19 @@ angular.module('turnosApp')
                 { id: 3, title: "Message C", selected: true },
             ];
 
-            $scope.people = [
+            CMedicosService.getAllCMedicos().then(
+                function(rta) {
+
+                    console.log(rta.data.Centros);
+
+                    $scope.cmedicos = rta.data.Centros;
+                    console.log($scope.cmedicos);
+                },
+                function(rta) {
+                    console.log(rta.data);
+                }
+            );
+            /*$scope.people = [
                 { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
                 { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
                 { name: 'Peter Carlsson', img: 'img/100-2.jpeg', newMessage: false },
@@ -50,13 +62,13 @@ angular.module('turnosApp')
                 { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
                 { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
                 { name: 'Peter Carlsson', img: 'img/100-2.jpeg', newMessage: false }
-            ];
+            ];*/
 
-            $scope.goToPerson = function(person, event) {
+            $scope.goToPerson = function(cmedico, event) {
                 $mdDialog.show(
                     $mdDialog.alert()
                     .title('Navigating')
-                    .textContent('Inspect ' + person)
+                    .textContent('Inspect ' + cmedico)
                     .ariaLabel('Person inspect demo')
                     .ok('Neat!')
                     .targetEvent(event)
