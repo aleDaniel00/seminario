@@ -237,6 +237,7 @@ i.material-icons {}
 menu-panelpaciente md-sidenav.md-sidenav-left.ng-isolate-scope._md.md-whiteframe-4dp {
     max-width: 200px;
     position: fixed;
+    background: #515151;
 }
 
 md-toolbar.md-theme-grey._md._md-toolbar-transitions {
@@ -258,7 +259,7 @@ md-toolbar {
 md-toolbar.md-theme-dark._md._md-toolbar-transitions {
     text-align: right;
     height: 153px;
-    background-color: rgba(255, 255, 255, 0);
+    background-color: rgba(70, 70, 70, 0.75);
 }
 
 h1.md-toolbar-tools {
@@ -290,7 +291,9 @@ md-toolbar i.material-icons {
 
 menu-panelturnos.ng-isolate-scope {}
 
-menu-panelturnos.ng-isolate-scope {}
+menu-panelturnos.ng-isolate-scope > md-list {
+    /* border-left: 4px solid #1398ad; */
+}
 
 md-dialog._md._md.md-transition-in {
     max-width: 100%;
@@ -412,15 +415,17 @@ button.btn.btn-default.btn-filter {
 }
 
 md-content.layout-margin._md {
-    /* background: #7b7b7b; */
+    background: #515151;
 }
 
 svg {}
 
 span.md-icon-button.md-primary md-icon svg {
-    width: 52px;
-    height: 65px;
-    margin-left: -10px;
+    width: 39px;
+    height: 80px;
+    margin-left: 4px;
+    /* border-left: 3px solid #00bcd4; */
+    padding-left: 9px;
 }
 
 span.md-icon-button.md-primary {
@@ -503,7 +508,7 @@ button.md-raised.confirm-button.md-button.md-ink-ripple:hover {
 }
 
 button.md-raised.confirm-button.md-button.md-ink-ripple {
-    background: #68b4c0;
+    background: #1398ad;
     color: white;
     width: 97%;
 3: 4
@@ -741,3 +746,9 @@ md-radio-button#radio_25.checked {
     font-size: 2rem;
     line-height: 28px;
 }
+
+.md-subheader-inner {
+    border: 2px solid #00bcd4;
+}
+
+md-list {}
