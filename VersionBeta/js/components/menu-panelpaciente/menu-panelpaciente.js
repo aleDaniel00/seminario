@@ -5,9 +5,47 @@ angular.module('turnosApp')
             if ($location.path() === '/panelCentroMedico') {
 
                 $scope.panelCentroMedico = true;
-                $scope.tiyulo = 'Guardia GuemesPonele';
+                $scope.titulo = 'Guardia GuemesPonele';
                 $scope.propertyName = 'age';
                 $scope.reverse = true;
+
+                $scope.showConfirm = function(ev) {
+                    // Appending dialog to document.body to cover sidenav in docs app
+                    var confirm = $mdDialog.confirm()
+                        .title('Would you like to delete your debt?')
+                        .textContent('All of the banks have agreed to forgive you your debts.')
+                        .ariaLabel('Lucky day')
+                        .targetEvent(ev)
+                        .ok('Please do it!')
+                        .cancel('Sounds like a scam');
+
+                    $mdDialog.show(confirm).then(function() {
+                        $scope.status = 'You decided to get rid of your debt.';
+                    }, function() {
+                        $scope.status = 'You decided to keep your debt.';
+                    });
+                };
+
+                $scope.showPrompt = function(ev) {
+                    // Appending dialog to document.body to cover sidenav in docs app
+                    var confirm = $mdDialog.prompt()
+                        .title('What would you name your dog?')
+                        .textContent('Bowser is a common name.')
+                        .placeholder('Dog name')
+                        .ariaLabel('Dog name')
+                        .initialValue('Buddy')
+                        .targetEvent(ev)
+                        .ok('Okay!')
+                        .cancel('I\'m a cat person');
+
+                    $mdDialog.show(confirm).then(function(result) {
+                        $scope.status = 'You decided to name your dog ' + result + '.';
+                    }, function() {
+                        $scope.status = 'You didn\'t name your dog.';
+                    });
+                };
+
+
 
                 $scope.sortBy = function(propertyName) {
                     $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
@@ -44,7 +82,8 @@ angular.module('turnosApp')
 
                 CMedicosService.getCentros().then(
                     function(rta) {
-                        console.log(rta.data[0]);
+                        console.log(rta.data.Centros[0]);
+                        $scope.titulo = rta.data.Centros[0].Nombre
                         $scope.estados = rta.data[0];
                     },
                     function(rta) {
@@ -108,6 +147,24 @@ angular.module('turnosApp')
                 $scope.consejo = 'Si este horario te conviene presiona el boton de confirmar asistencia, si no es asi, puedes volve atras para seleccionar otro centro medico';
                 $scope.consejo2 = 'Si este horario te conviene presiona el boton de confirmar asistencia, si no es asi, puedes volve atras para seleccionar otro centro medico';
                 $scope.consejo3 = 'Si este horario te conviene presiona el boton de confirmar asistencia, si no es asi, puedes volve atras para seleccionar otro centro medico';
+
+                $scope.showConfirm = function(ev) {
+                    // Appending dialog to document.body to cover sidenav in docs app
+                    var confirm = $mdDialog.confirm()
+                        .title('Would you like to delete your debt?')
+                        .textContent('All of the banks have agreed to forgive you your debts.')
+                        .ariaLabel('Lucky day')
+                        .targetEvent(ev)
+                        .ok('Please do it!')
+                        .cancel('Sounds like a scam');
+
+                    $mdDialog.show(confirm).then(function() {
+                        $scope.status = 'You decided to get rid of your debt.';
+                    }, function() {
+                        $scope.status = 'You decided to keep your debt.';
+                    });
+                };
+
                 $scope.openOtionsTurno = function() {
                         /**
                          * algunos eventos y acciones sobre el turno confirmado
@@ -166,7 +223,7 @@ angular.module('turnosApp')
                     $mdDialog.show(
                         $mdDialog.alert()
                         .title('Telefonos')
-                        .textContent('Puedes llamar directamente: ' + to.Numero[0])
+                        .textContent(to.Numero[0])
                         .ariaLabel('Navigation demo')
                         .ok('Cerrar')
                         .targetEvent(event)
@@ -176,7 +233,7 @@ angular.module('turnosApp')
                     $mdDialog.show(
                         $mdDialog.alert()
                         .title('Ubicacion')
-                        .textContent('Puedes buscar en google maps: ' + to.Ubicacion)
+                        .textContent(to.Barrio + ', ' + to.Ubicacion)
                         .ariaLabel('Navigation demo')
                         .ok('Cerrar')
                         .targetEvent(event)

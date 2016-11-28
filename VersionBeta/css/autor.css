@@ -1,7 +1,7 @@
 body {
     font-family: 'Roboto', sans-serif;
     background: whitesmoke;
-    min-height: 132%;
+    /* min-height: 132%; */
 }
 
 .navbar-brand>img {
@@ -290,7 +290,7 @@ menu-panelpaciente md-sidenav button.md-fab.md-button.md-ink-ripple {
 }
 
 md-toolbar i.material-icons {
-    color: rgba(255, 255, 255, 0.69);
+    color: rgba(142, 142, 142, 0.69);
     font-size: 21px;
 }
 
@@ -676,6 +676,8 @@ md-input-container.md-input-has-value label:not(.md-no-float) {
     box-shadow: none;
     padding: 0;
     margin: 9px 0;
+    /* overflow: scroll; */
+    /* max-height: 491px; */
 }
 
 .well.well-lg.result-search>div.col-xs-12 {}
@@ -685,6 +687,8 @@ md-input-container.md-input-has-value label:not(.md-no-float) {
     border-radius: 3px;
     border: 1px solid #dedede;
     padding: 0px;
+    overflow-y: scroll;
+    max-height: 491px;
 }
 
 .result-search .col-xs-12.col-md-4 {
@@ -888,7 +892,8 @@ md-toolbar.md-hue-2.head-section._md._md-toolbar-transitions {
 }
 
 button.md-fab.md-primary.md-button.md-ink-ripple {
-    background: #e8e8e8;
+    background: #a5a3a3;
+    color:;
 }
 
 md-icon.ng-scope {
@@ -896,7 +901,7 @@ md-icon.ng-scope {
 }
 
 .opcionesTurnoConfirmado path {
-    fill: #949393;
+    fill: #5d5d5d;
 }
 
 p.head-consejo.ng-binding {
@@ -1033,7 +1038,7 @@ abm-user md-pagination-wrapper {
 }
 
 .table-responsive button {
-    padding: 5px 2px;
+    padding: 5px 7px;
     background: whitesmoke;
     border: none;
     outline: none;
@@ -1041,13 +1046,15 @@ abm-user md-pagination-wrapper {
     font-weight: 500;
     width: 100%;
     border-radius: 5px;
+    text-align: left;
+    margin-left: -9px;
 }
 
 span.sortorder {
     position: absolute;
-    top: 12px;
+    top: 14px;
     color: #51a1b5;
-    left: 9px;
+    right: 28px;
     font-size: 11px;
     transform: matrix3d(-1,0,0.00,0,0.00,-1,0.00,0,0,0,1,0,0,0,0,1);
     -webkit-transform: matrix3d(-1,0,0.00,0,0.00,-1,0.00,0,0,0,1,0,0,0,0,1);
@@ -1078,4 +1085,20 @@ thead {
 tr.content-table.ng-scope > td {
     padding: 0px;
     vertical-align: baseline;
+}
+
+.table-responsive {
+    max-height: 400px;
+}
+
+md-radio-group.ng-pristine.ng-untouched._md.ng-empty.ng-invalid.ng-invalid-required {
+    overflow: scroll;
+}
+
+.panel form button.md-raised.col-xs-12.col-md-6.md-primary.md-button.md-ink-ripple {
+    color: #ececec;
+}
+
+.panel form button.md-primary.md-raised:not([disabled]):hover {
+    background: #07a8c7;
 }

@@ -19,7 +19,7 @@
         <!--end Menu -->
         <md-content flex="" layout-padding="">
             <!--init header -->
-            <section layout="col" layout-sm="column" layout-align="left center" layout-wrap="" class="col-xs-12 col-md-12" ng-show="cmedic_seleccionado || panelCentroMedico || opcionesTurnoConfirmado">
+            <section layout="col" layout-sm="column" layout-align="left center" layout-wrap="" class="col-xs-12 col-md-12" ng-show="cmedic_seleccionado  || opcionesTurnoConfirmado">
                 <md-button class="md-icon-button btn-menu-panelturnos" ng-click="toggleLeft()" aria-label="More">
                     <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
                 </md-button>
@@ -56,14 +56,12 @@
 
                                                             <md-fab-actions>
                                                                 <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
-                                                                    <md-icon md-svg-src="img/icons/close.svg" aria-label="Twitter"></md-icon>
+                                                                    <md-icon ng-click="showConfirm($event)"><i class="material-icons borrarTurnoIcon">&#xE426;</i></md-icon>
+                                                                    <md-tooltip md-visible="false" md-direction="down">
+                                                                        Cancelar Turno
+                                                                    </md-tooltip>
                                                                 </md-button>
-                                                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
-                                                                    <md-icon md-svg-src="img/icons/close.svg" aria-label="Facebook"></md-icon>
-                                                                </md-button>
-                                                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
-                                                                    <md-icon md-svg-src="img/icons/close.svg" aria-label="Google Hangout"></md-icon>
-                                                                </md-button>
+
                                                             </md-fab-actions>
                                                         </md-fab-speed-dial>
                                                     </div>
@@ -94,8 +92,9 @@
 
                                                 </div>
                                                 <div class="col-xs-12 col-md-2 pull-right" ng-hide="opcionesTurnoConfirmado || panelTurnosBusquedaCentro">
-                                                    <md-button type="submit" class="md-raised col-xs-12 col-md-6 md-primary" ng-href="#/panelTurno/turnoConfirmado">
+                                                    <md-button type="submit" class="md-raised col-xs-12 col-md-6 md-primary" ng-click="showPrompt($event)">
                                                         Agregar
+
                                                     </md-button>
                                                 </div>
                                             </form>
@@ -146,10 +145,12 @@
                                                             </md-card-content>
                                                         </td>
                                                         <td>
-                                                            <md-button class="md-fab md-mini borrarTurnoButton" aria-label="Eat cake">
+                                                            <md-button class="md-fab md-mini borrarTurnoButton" ng-click="showConfirm($event)" aria-label="Eat cake">
                                                                 <md-icon><i class="material-icons borrarTurnoIcon">&#xE426;</i></md-icon>
+                                                                <md-tooltip md-visible="false" md-direction="top">
+                                                                    Cancelar Turno
+                                                                </md-tooltip>
                                                             </md-button>
-
 
                                                         </td>
                                                     </tr>
