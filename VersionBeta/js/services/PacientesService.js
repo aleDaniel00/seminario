@@ -3,6 +3,14 @@ angular.module('turnosApp')
         '$http',
         function($http) {
             this.createUser = function(proyecto) {
+
+                /*var config = {
+                    /*headers: {
+                        "Authorization": "cualquier cosa"
+                    }*
+                }*/
+
+
                 return $http.post('http://turnos-app.com/testapi/v1/createUser', proyecto);
             };
             this.updateUser = function(proyecto) {
