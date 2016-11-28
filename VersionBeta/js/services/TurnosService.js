@@ -12,7 +12,7 @@ angular.module('turnosApp')
                 return $http.get('http://turnos-app.com/testapi/v1/getTurnos');
             };
             this.getTurno = function(id) {
-                return $http.get('http://turnos-app.com/testapi/v1/getTurnos/id/:id', );
+                return $http.get('http://turnos-app.com/testapi/v1/getTurnos/id/:id');
             };
             this.getEstados = function() {
                 return $http.get('http://turnos-app.com/testapi/v1/getEstados');

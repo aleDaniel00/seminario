@@ -81,10 +81,15 @@
                                             <form ng-submit="$event.preventDefault()" name="searchFormTurno" ng-cloak>
 
                                                 <div class="col-xs-12 col-md-8">
-                                                    <md-input-container class="md-accent col-xs-12 col-md-8">
+                                                    <md-input-container class="md-accent col-xs-12 col-md-6">
                                                         <md-icon class="icon-search" md-svg-icon="img/clock.svg"></md-icon>
-                                                        <label>busca alfaveticamente</label>
-                                                        <input ng-model="search.Turno" />
+                                                        <label>Busca por apellido</label>
+                                                        <input ng-model="search.Nombre" />
+                                                    </md-input-container>
+                                                    <md-input-container class="md-accent col-xs-12 col-md-4">
+                                                        <md-icon class="icon-location" md-svg-icon="img/icons/map-marker-radius.svg"></md-icon>
+                                                        <label>NumeroSocio</label>
+                                                        <input ng-model="search.NumeroSocio" type="text" />
                                                     </md-input-container>
 
                                                 </div>
@@ -102,38 +107,53 @@
                                                 <thead>
                                                     <tr>
                                                         <th>#</th>
-                                                        <th>First Name</th>
-                                                        <th>Last Name</th>
-                                                        <th>Username</th>
-                                                        <th>Username</th>
-                                                        <th>Username</th>
+                                                        <th>
+                                                            <button ng-click="sortBy('date')">Hora</button>
+                                                            <span class="sortorder" ng-show="propertyName === 'date'" ng-class="{reverse: reverse}"></span>
+                                                        </th>
+                                                        <th>Numero Socio</th>
+                                                        <th>
+                                                            <button ng-click="sortBy('name')">Nombre Paciente</button>
+                                                            <span class="sortorder" ng-show="propertyName === 'name'" ng-class="{reverse: reverse}"></span>
+                                                        </th>
+                                                        <th>Prioridad</th>
+                                                        <th>Estado</th>
+                                                        <th>Acciones</th>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <th scope="row">1</th>
-                                                        <td>Mark</td>
-                                                        <td>Otto</td>
-                                                        <td>@mdo</td>
-                                                        <td>@mdo</td>
-                                                        <td>@mdo</td>
+                                                    <tr ng-repeat="turno in turnos | filter:search:strict" class="content-table">
+                                                        <th scope="row">{{turno.IdTurno}}</th>
+                                                        <td>{{turno.Fechahora | date: "h:mm:ss a" }}</td>
+                                                        <td>{{turno.NumeroSocio}}</td>
+                                                        <td>{{turno.Nombre}}</td>
+                                                        <td>
+                                                            <md-card-content>
+                                                                <div layout="row" layout-align="space-between center">
+                                                                    <md-select ng-model="prioridad" placeholder="{{turno.Prioridad}}" class="md-no-underline">
+                                                                        <md-option value="p.Nombre" ng-repeat="p in prioridades | limitTo : 5  ">{{p.Nombre}}</md-option>
+                                                                    </md-select>
+                                                                </div>
+                                                            </md-card-content>
+                                                        </td>
+                                                        <td>
+                                                            <md-card-content>
+                                                                <div layout="row" layout-align="space-between center">
+                                                                    <md-select ng-model="estado" placeholder="{{turno.Estado}}" class="md-no-underline">
+                                                                        <md-option value="e.Nombre" ng-repeat="e in estados | limitTo : 5  ">{{e.Nombre}}</md-option>
+                                                                    </md-select>
+                                                                </div>
+                                                            </md-card-content>
+                                                        </td>
+                                                        <td>
+                                                            <md-button class="md-fab md-mini borrarTurnoButton" aria-label="Eat cake">
+                                                                <md-icon><i class="material-icons borrarTurnoIcon">&#xE426;</i></md-icon>
+                                                            </md-button>
+
+
+                                                        </td>
                                                     </tr>
-                                                    <tr>
-                                                        <th scope="row">2</th>
-                                                        <td>Jacob</td>
-                                                        <td>Thornton</td>
-                                                        <td>@fat</td>
-                                                        <td>@fat</td>
-                                                        <td>@fat</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <th scope="row">3</th>
-                                                        <td>Larry</td>
-                                                        <td>the Bird</td>
-                                                        <td>@twitter</td>
-                                                        <td>@twitter</td>
-                                                        <td>@twitter</td>
-                                                    </tr>
+
                                                 </tbody>
                                             </table>
                                         </div>

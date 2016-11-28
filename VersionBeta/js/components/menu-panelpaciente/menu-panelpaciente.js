@@ -1,10 +1,57 @@
 angular.module('turnosApp')
     .component('menuPanelpaciente', {
         templateUrl: './js/components/menu-panelpaciente/menu-panelpaciente.html',
-        controller: function($scope, $timeout, $mdSidenav, $mdDialog, CMedicosService, $location, $http) {
+        controller: function($scope, $timeout, $mdSidenav, $mdDialog, CMedicosService, $location, $http, TurnosService) {
             if ($location.path() === '/panelCentroMedico') {
+
                 $scope.panelCentroMedico = true;
-                $scope.titulo = 'Centro Medico GuemesPonele';
+                $scope.tiyulo = 'Guardia GuemesPonele';
+                $scope.propertyName = 'age';
+                $scope.reverse = true;
+
+                $scope.sortBy = function(propertyName) {
+                    $scope.reverse = ($scope.propertyName === propertyName) ? !$scope.reverse : false;
+                    $scope.propertyName = propertyName;
+                };
+
+                TurnosService.getTurnos().then(
+                    function(rta) {
+                        console.log(rta.data);
+                        $scope.turnos = rta.data.Turnos;
+                    },
+                    function(rta) {
+                        console.log(rta.data);
+                    }
+                );
+                TurnosService.getPrioridades().then(
+                    function(rta) {
+                        console.log(rta.data);
+                        $scope.prioridades = rta.data;
+                    },
+                    function(rta) {
+                        console.log(rta.data);
+                    }
+                );
+                TurnosService.getEstados().then(
+                    function(rta) {
+                        console.log(rta.data);
+                        $scope.estados = rta.data;
+                    },
+                    function(rta) {
+                        console.log(rta.data);
+                    }
+                );
+
+                CMedicosService.getCentros().then(
+                    function(rta) {
+                        console.log(rta.data[0]);
+                        $scope.estados = rta.data[0];
+                    },
+                    function(rta) {
+                        console.log(rta.data);
+                    }
+                );
+
 
                 $scope.agregarTurno = function() {
                     /**
