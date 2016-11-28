@@ -5,7 +5,7 @@ angular.module('turnosApp').component('modalLogin', {
         close: '&',
         dismiss: '&'
     },
-    controller: function(PacientesService) {
+    controller: function(PacientesService, $scope) {
         var $ctrl = this;
         $ctrl.items = ['item1', 'item2', 'item3'];
 
@@ -42,16 +42,24 @@ angular.module('turnosApp').component('modalLogin', {
          );*/
 
         $ctrl.login = function() {
-            console.log($ctrl.proyecto);
+            console.log($ctrl.usuarioLogueado);
 
-            PacientesService.login($ctrl.proyecto).then(
+            PacientesService.login($ctrl.usuarioLogueado).then(
                 function(rta) {
-                    console.log(rta);
+                    console.log(rta.data);
                     console.log(rta.data.Token);
-                    localStorage.setItem("token", rta.data.Token);
+                    localStorage.setItem("Token", rta.data.Token);
+                    if (rta.data.Error === 1 || rta.data.Error === 2) {
+                        $scope.mensajeError = 'Email o contraseña incorrectos';
+                    } else if (rta.data.Error === 0) {
+
+                        $scope.mensajeExito = 'Usuario logueado correctamente';
+                    }
+
                 },
                 function(rta) {
-                    console.log(rta.data);;
+                    console.log(rta.data);
+                    $scope.mensajeError = 'Hay un error externo a turnos-app';
                 }
             );
         }

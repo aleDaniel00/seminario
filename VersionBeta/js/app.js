@@ -14,16 +14,19 @@ angular
             $routeProvider
             // Cada when define una ruta en nuestra aplicación.
                 .when('/', {
-                    // Le indicamos el template que queremos usar.
-                    templateUrl: 'views/home.html'
+                    'templateUrl': 'views/home.html'
                 })
                 .when('/panelTurno', {
-                    // Le indicamos el template que queremos usar.
                     'templateUrl': 'views/panelTurno.html'
                 })
                 .when('/panelTurno/turno', {
-                    // Le indicamos el template que queremos usar.
                     'templateUrl': 'views/turno.html'
+                })
+                .when('/panelTurno/turnoConfirmado', {
+                    'templateUrl': 'views/turnoConfirmado.html'
+                })
+                .when('/panelCentroMedico', {
+                    'templateUrl': 'views/panelCentroMedico.html'
                 })
                 .otherwise('/');
         }

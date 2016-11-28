@@ -61,7 +61,7 @@ footer .container {
     padding: 1px;
 }
 
-footer.footer>div.container>a {
+footer.footer>div.container>button {
     margin: 58px auto;
 }
 
@@ -91,13 +91,15 @@ main .thumbnail h3 {
     margin: 25px 0;
     color: #868686;
     text-align: center;
+    font-weight: 300;
 }
 
-a.btn.btn-primary.btn-lg {
+button.btn.btn-primary.btn-lg {
     background-color: #ff9933;
     border: 2px solid #ffffff;
     padding: 11px 45px;
     color: #ffffff;
+    outline: none;
 }
 
 main .section {
@@ -128,7 +130,7 @@ main .container-fluid.slide {
 nav.navbar.navbar-default {}
 
 main .section .row {
-    margin: 100px 0;
+    margin: 1px 0;
     /* margin-top: 0; */
 }
 
@@ -196,16 +198,16 @@ main .section .bs-callout.bs-callout-danger {
 }
 
 .bs-callout.bs-callout-danger>h2 {
-    color: #ff9933;
-    background: #f6f6f6;
-    border-left: 2px solid;
+    color: #828282;
+    font-weight: 100;
+    font-size: 4rem;
     padding: 26px 19px;
-    border-right: 2px solid;
+    /* border-right: 2px solid; */
     text-align: center;
 }
 
 header>nav ul.nav>li>a>span:last-of-type {
-    color: #1398ad;
+    color: #0a6f7d;
     font-weight: 400;
     font-size: 1.6rem;
 }
@@ -214,7 +216,9 @@ header>nav ul.nav>li>a>span:last-of-type {
     padding: 11px;
 }
 
-i.material-icons {}
+.btn-ppal i.material-icons {
+    font-size: 25px;
+}
 
 .navbar-brand>span {
     display: inline-block;
@@ -237,7 +241,7 @@ i.material-icons {}
 menu-panelpaciente md-sidenav.md-sidenav-left.ng-isolate-scope._md.md-whiteframe-4dp {
     max-width: 200px;
     position: fixed;
-    background: #515151;
+    background: #2f2f2f;
 }
 
 md-toolbar.md-theme-grey._md._md-toolbar-transitions {
@@ -259,7 +263,7 @@ md-toolbar {
 md-toolbar.md-theme-dark._md._md-toolbar-transitions {
     text-align: right;
     height: 153px;
-    background-color: rgba(70, 70, 70, 0.75);
+    background-color: rgb(47, 47, 47);
 }
 
 h1.md-toolbar-tools {
@@ -270,14 +274,14 @@ h1.md-toolbar-tools {
     padding: 47px 0;
 }
 
-button.md-fab.md-button.md-ink-ripple {
+menu-panelpaciente md-sidenav button.md-fab.md-button.md-ink-ripple {
     position: absolute;
     right: 0;
     top: 16%;
     /* height: 4px; */
     /* color: rgba(245, 245, 245, 0.52) !important; */
     /* border: none; */
-    background: rgb(185, 185, 185);
+    background: rgb(84, 84, 84);
     /* border: 1px solid; */
     /* text-align: center; */
     /* padding: 0; */
@@ -291,7 +295,7 @@ md-toolbar i.material-icons {
 
 menu-panelturnos.ng-isolate-scope {}
 
-menu-panelturnos.ng-isolate-scope > md-list {
+menu-panelturnos.ng-isolate-scope>md-list {
     /* border-left: 4px solid #1398ad; */
 }
 
@@ -315,7 +319,7 @@ menu-panelpaciente .layout-column .col {
     width: 98%;
 }
 
-menu-panelpaciente > div >section md-content._md > div {
+menu-panelpaciente>div>section md-content._md>div {
     /* background: red; */
 }
 
@@ -325,18 +329,17 @@ menu-panelturnos .md-list-item-inner {
     height: 101px;
 }
 
-a.md-no-style.md-button.md-ink-ripple {
-}
+a.md-no-style.md-button.md-ink-ripple {}
 
 p {}
 
 span.md-icon-button.md-primary md-icon svg path {
-    fill: #bdbdbd;
+    fill: #949494;
 }
 
-menu-panelturnos .md-list-item-inner > p {
+menu-panelturnos .md-list-item-inner>p {
     font-size: 1.6rem;
-    color: #8c8c8c;
+    color: #bfbfbf;
     margin-top: 5px;
     text-align: center;
     margin: 5px 73px;
@@ -354,10 +357,12 @@ md-icon.ng-scope.material-icons {
 }
 
 button.md-fab.md-button.md-ink-ripple:hover {
-    background-color: #727272;
+    background-color: #7b7b7b;
+    /* color: #949494; */
 }
 
-md-input-container md-select md-select-value span,.search-input md-input-container label {
+md-input-container md-select md-select-value span,
+.search-input md-input-container label {
     font-size: 18px;
     color: #7b7b7b;
     font-weight: 400;
@@ -391,9 +396,11 @@ button.btn.btn-default.btn-filter {
 }
 
 .search-input h1 {
-    color: #bcbcbc;
+    color: #212121;
     font-weight: 300;
-    margin: 30px 0;
+    padding: 6px 14px;
+    margin-top: 0;
+    font-size: 3rem;
 }
 
 .search-input .layout-column {
@@ -401,11 +408,11 @@ button.btn.btn-default.btn-filter {
     border: none;
 }
 
-.search-input  md-content.md-padding.md-accent._md {
+.search-input md-content.md-padding.md-accent._md {
     background: #ffffff;
     border-color: transparent;
     box-shadow: none;
-    padding: 37px 0px;
+    /* padding: 37px 0px; */
     overflow: hidden;
     padding-bottom: 26px;
 }
@@ -415,16 +422,15 @@ button.btn.btn-default.btn-filter {
 }
 
 md-content.layout-margin._md {
-    background: #515151;
+    background: #2f2f2f;
 }
 
 svg {}
 
 span.md-icon-button.md-primary md-icon svg {
-    width: 39px;
-    height: 80px;
+    width: 32px;
+    height: 73px;
     margin-left: 4px;
-    /* border-left: 3px solid #00bcd4; */
     padding-left: 9px;
 }
 
@@ -435,7 +441,8 @@ span.md-icon-button.md-primary {
     display: inline-block;
 }
 
-md-icon.icon-search,md-icon.icon-location {
+md-icon.icon-search,
+md-icon.icon-location {
     /* top: -23px; */
     /* width: 34px; */
     /* height: 50px; */
@@ -455,12 +462,12 @@ md-icon.icon-location {
 }
 
 menu-panelpaciente section.layout-wrap.layout-sm-column.layout-align-start-center.layout-row {
-    background: #00BCD4;
+    background: #02a8bd;
 }
 
 md-icon.ng-scope {}
 
-button.md-icon-button.btn-menu-panelturnos.md-button.md-ink-ripple > md-icon > svg > path {
+button.md-icon-button.btn-menu-panelturnos.md-button.md-ink-ripple>md-icon>svg>path {
     fill: white;
 }
 
@@ -468,7 +475,7 @@ span {}
 
 button.md-icon-button.btn-menu-panelturnos.md-button.md-ink-ripple {}
 
-section.layout-wrap.layout-sm-column.layout-align-start-center.layout-row >  span {
+section.layout-wrap.layout-sm-column.layout-align-start-center.layout-row>span {
     color: white;
     font-size: 2rem;
 }
@@ -510,11 +517,11 @@ button.md-raised.confirm-button.md-button.md-ink-ripple:hover {
 button.md-raised.confirm-button.md-button.md-ink-ripple {
     background: #1398ad;
     color: white;
-    width: 97%;
-3: 4
-    padding: 0;
-    height: 45px;
-    margin: 11px 5px;
+    width: 100%;
+    3: 4 padding: 0;
+    padding: 3px 0;
+    margin: 8px 0px;
+    border: 2px solid #4fa2cc;
 }
 
 md-content.layout-padding._md.flex {
@@ -551,7 +558,8 @@ abm-user md-content.row.ng-scope._md {
     text-align: center;
 }
 
-abm-user md-tab-item.md-tab.ng-scope.ng-isolate-scope.md-ink-ripple.md-active,abm-user md-ink-bar {
+abm-user md-tab-item.md-tab.ng-scope.ng-isolate-scope.md-ink-ripple.md-active,
+abm-user md-ink-bar {
     width: 100%;
 }
 
@@ -573,7 +581,7 @@ button.cancel.pull-left.md-button.md-ink-ripple {
     margin: 19px 0;
 }
 
-button.md-raised.search-button.pull-right.md-button.md-ink-ripple > md-icon {
+button.md-raised.search-button.pull-right.md-button.md-ink-ripple>md-icon {
     width: 31px;
     color: #ffffff;
     padding: 9px 3px;
@@ -608,8 +616,7 @@ md-icon.md-secondary.ab {
     /* bottom: 15px; */
 }
 
-main.ng-scope {
-}
+main.ng-scope {}
 
 section.layout-row.flex {
     background: red;
@@ -624,7 +631,7 @@ section.layout-row.flex {
     padding: 0 0px;
     background: white;
     margin: 7px 0;
-    border: 1px solid #e5e5e5;
+    /* border: 1px solid #e5e5e5; */
     color: #b2a5a5;
     padding: 17px 6px;
     border-top-color: rgba(196, 196, 196, 0.47);
@@ -643,7 +650,9 @@ section.layout-row.flex {
     margin-bottom: 0;
 }
 
-label {margin: 0;}
+label {
+    margin: 0;
+}
 
 md-input-container.md-input-has-value label:not(.md-no-float) {
     color: #969696;
@@ -658,8 +667,7 @@ md-input-container.md-input-has-value label:not(.md-no-float) {
     display: inline;
 }
 
-.col-xs-12.mas-margin {
-}
+.col-xs-12.mas-margin {}
 
 .well.well-lg.result-search {
     background: whitesmoke;
@@ -669,9 +677,9 @@ md-input-container.md-input-has-value label:not(.md-no-float) {
     margin: 9px 0;
 }
 
-.well.well-lg.result-search > div.col-xs-12 {}
+.well.well-lg.result-search>div.col-xs-12 {}
 
-.well.well-lg.result-search > div > div:first-of-type {
+.well.well-lg.result-search>div>div:first-of-type {
     background: white;
     border-radius: 3px;
     border: 1px solid #dedede;
@@ -679,8 +687,9 @@ md-input-container.md-input-has-value label:not(.md-no-float) {
 }
 
 .result-search .col-xs-12.col-md-4 {
-    /* margin: 17px auto 0 0px; */
+    /* background: white; */
     display: inline-block;
+    padding: 0;
 }
 
 .result-search .col-xs-12.col-md-8 {
@@ -696,7 +705,7 @@ md-radio-group .flex {
     margin: 0;
     padding: 0;
     padding-left: 19px;
-    background: white;
+    /* background: white; */
 }
 
 .flex.tel-dir {
@@ -720,22 +729,25 @@ md-radio-group .flex {
 }
 
 .noright {
-    padding: 0;
+    /* padding: 0; */
 }
 
-.noright.ng-scope:hover {
-    background: #f7f7f7;
+.noright:hover {
+    /* background: rgb(68, 68, 68); */
 }
 
 md-radio-button#radio_25.checked {
     /* background: red; */
 }
 
-.noright md-radio-button {font-size: 2rem;color: #1398ad;}
+.noright md-radio-button {
+    font-size: 1.5rem;
+    color: #1398ad;
+}
 
 .noright md-radio-button {
-    min-height: 82px;
-    padding-top: 23px !important;
+    min-height: 55px;
+    padding-top: 18px !important;
 }
 
 .layout-padding.layout-align-start-center.layout-row.flex {
@@ -743,12 +755,260 @@ md-radio-button#radio_25.checked {
 }
 
 .md-subheader-content {
-    font-size: 2rem;
-    line-height: 28px;
+    font-size: 1.5rem;
+    line-height: 19px;
 }
 
 .md-subheader-inner {
-    border: 2px solid #00bcd4;
+    border: 2px solid rgba(19, 152, 173, 0);
 }
 
 md-list {}
+
+.search-input p.info {
+    margin: 0;
+    padding: 6px 15px;
+    margin-bottom: 13px;
+    width: auto;
+    display: inline-block;
+    font-size: 1.5rem;
+    color: #9c9c9c;
+}
+
+md-radio-button#radio_147:hover {
+    /* background: red; */
+}
+
+.col-xs-12.col-md-12.preseleccion {
+    /* background: #e6e6e6; */
+    /* width: 96.7%; */
+    /* margin: 0px 3%; */
+    padding-left: 11px;
+    padding-right: 3px;
+    /* margin-bottom: 0; */
+    /* min-height: 195px; */
+    /* border-radius: 3px; */
+    /* border: 1px solid #e0e0e0; */
+}
+
+.preseleccion>p,
+.preseleccion p {
+    font-size: 28px;
+    text-align: center;
+    margin: 0;
+}
+
+p.headSeleccion {
+    font-size: 16px;
+    margin: 21px 0;
+    color: #969696;
+    margin-top: 0;
+}
+
+md-radio-button:focus {
+    outline: none;
+}
+
+.preseleccion>.content>p {
+    color: #b5b5b5;
+}
+
+p.seleccionTemporal.ng-binding {
+    /* color: red; */
+}
+
+button.md-raised.confirm-button.md-button.md-raised[disabled] {
+    background: transparent;
+    background: #e6e6e6;
+    color: #898989;
+    border: 2px solid #c7c7c7;
+}
+
+.preseleccion>.content {
+    background: #e6e6e6;
+    padding: 31px 25px;
+    border-radius: 3px;
+    border: 1px solid #e0e0e0;
+    min-height: 178px;
+}
+
+.col-xs-12.col-md-12.btn-submit {
+    padding-right: 3px;
+    padding-left: 10px;
+}
+
+div.md-button:not([disabled]):hover {
+    /* background: rgba(51, 51, 51, 0.41); */
+}
+
+.fabSpeedDialdemoBasicUsage .text-capitalize {
+    text-transform: capitalize;
+}
+
+.fabSpeedDialdemoBasicUsage .md-fab:hover,
+.fabSpeedDialdemoBasicUsage .md-fab.md-focused {
+    background-color: #d8d8d8 !important;
+}
+
+.fabSpeedDialdemoBasicUsage p.note {
+    font-size: 1.2rem;
+}
+
+.fabSpeedDialdemoBasicUsage .lock-size {
+    /* min-width: 300px; */
+    /* min-height: 300px; */
+    /* width: 300px; */
+    /* height: 300px; */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+md-fab-speed-dial button.md-fab:hover {
+}
+
+button.md-fab.md-warn.md-button.md-ink-ripple {}
+
+md-fab-speed-dial button.md-fab.md-button.md-ink-ripple md-icon {
+    color: white !important;
+}
+
+p.hora_pre.ng-binding {
+    text-align: center;
+    font-size: 3em;
+    padding: 0px 6px;
+    margin: 0;
+    background: #e8e8e8;
+    border-radius: 5px;
+    color: #6b6b6b;
+}
+
+md-toolbar.md-hue-2.head-section._md._md-toolbar-transitions {
+    background: white;
+    color: #585858;
+}
+
+button.md-fab.md-primary.md-button.md-ink-ripple {
+    background: #e8e8e8;
+}
+
+md-icon.ng-scope {
+    /* color: red !important; */
+}
+
+.opcionesTurnoConfirmado path {
+    fill: #949393;
+}
+
+p.head-consejo.ng-binding {
+    font-size: 2rem;
+    padding: 39px 6px;
+    width: 100%;
+    text-align: center;
+}
+
+.preturno > a {
+    padding: 0px;
+    margin: 0 3px;
+    width: 48%;
+}
+
+a.md-raised.col-xs-12.col-md-6.md-primary.md-button.md-ink-ripple {
+    background: #FF9800;
+    color: white;
+}
+
+a.md-raised.col-xs-12.col-md-6.md-primary.md-button.md-ink-ripple:hover {
+    background: #EF6C00;
+}
+
+.consejosExtras {
+    padding: 0;
+    border-top: 1px solid #e0e0e0;
+}
+
+.consejosExtras .col-md-4 {
+    /* background: red; */
+    /* margin: 0 0px; */
+    /* width: 30%; */
+    /* margin: 0 15px; */
+}
+
+.consejosExtras p {
+    color: #8e8e8e;
+}
+
+.consejosExtras h2 {
+    font-size: 21px;
+    color: #505050;
+}
+
+.opcionesTurnoConfirmado {
+    position: absolute;
+    right: -20px;
+    top: -14px;
+}
+
+.col-md-6.col-md-offset-3.preturno {margin-top: 37px;}
+
+a.md-raised.col-xs-12.col-md-6.md-button.md-ink-ripple:last-of-type {
+    color: #7d7d7d;
+}
+
+span.error {
+    color: rgba(241, 3, 3, 0.72);
+    padding: 6px 44px;
+    background: #e4e4e4;
+}
+
+span.advertencia {
+    color: rgb(169, 168, 167);
+    padding: 5px 44px;
+    background: rgb(228, 228, 228);
+}
+
+main > .container.ng-scope {
+    background: white;
+}
+
+.btn-ppal md-icon {
+    color: #065d6b;
+    width: 50px;
+    height: 31px;
+}
+
+.formLfin p.mensajeErrorServer,modal-registro .form-olvido  p.ms-s {
+    background: #616161;
+    margin: 19px 0;
+    padding: 0px 0;
+    font-size: 18px;
+    border-radius: 3px;
+    color: #ffffff;
+}
+
+p.ms-s.mensajeErrorServer.ng-binding {
+    color: #ffa9a9;
+}
+
+p.ms-s.mensajeExitoServer.ng-binding {
+    color: #5fc386;
+}
+
+.formLogin p.ms-s.mensajeErrorServer.ng-binding {
+    background: #616161;
+    margin: 19px 0;
+    padding: 0px 0;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+p.ms-s.mensajeExitoServer.ng-binding {
+    background: #616161;
+    margin: 19px 0;
+    padding: 0px 0;
+    font-size: 18px;
+    border-radius: 3px;
+}
+
+abm-user md-pagination-wrapper {
+    width: 100% !important;
+}

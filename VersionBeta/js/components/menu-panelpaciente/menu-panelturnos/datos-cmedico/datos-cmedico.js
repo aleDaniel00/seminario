@@ -1,9 +1,7 @@
 angular.module('turnosApp')
-    .component('abmUser', {
-        templateUrl: './js/components/menu-panelpaciente/menu-panelturnos/abm-user/abm-user.html',
+    .component('datosCmedico', {
+        templateUrl: './js/components/menu-panelpaciente/menu-panelturnos/datos-cmedico/datos-cmedico.html',
         controller: function($scope, $mdDialog, PacientesService) {
-
-
             $scope.hide = function() {
                 $mdDialog.hide();
             };
@@ -28,15 +26,26 @@ angular.module('turnosApp')
                 postalCode: '94043'
             };
 
-
+            $scope.states = ('AL AK AZ AR CA CO CT DE FL GA HI ID IL IN IA KS KY LA ME MD MA MI MN MS ' +
+                'MO MT NE NV NH NJ NM NY NC ND OH OK OR PA RI SC SD TN TX UT VT VA WA WV WI ' +
+                'WY').split(' ').map(function(state) {
+                return { abbrev: state };
+            });
             $scope.closeDialog = function() {
                     $mdDialog.hide();
                 }
                 /*
                  * controller para el formulario 
                  */
+            $scope.user = {
+                name: 'John Doe',
+                email: '',
+                phone: '',
+                address: 'Mountain View, CA',
+                donation: 19.99
+            };
 
-            PacientesService.getDatesUser().then(
+            PacientesService.verDatos().then(
                 function(rta) {
                     console.log(rta.data);
                     $scope.user = {

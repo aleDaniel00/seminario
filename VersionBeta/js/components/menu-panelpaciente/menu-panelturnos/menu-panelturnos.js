@@ -1,7 +1,10 @@
 angular.module('turnosApp')
     .component('menuPanelturnos', {
         templateUrl: './js/components/menu-panelpaciente/menu-panelturnos/menu-panelturnos.html',
-        controller: function($scope, $mdDialog) {
+        controller: function($scope, $mdDialog, $location) {
+            if ($location.path() === '/panelTurno/turno') {
+                $scope.turnoSinConfirmar = true;
+            }
             $scope.items = [
                 { name: 'Turno', img: 'img/clock.svg', newMessage: true },
                 { name: 'Mensajes', img: 'img/message-text-outline.svg', newMessage: false },
@@ -11,6 +14,19 @@ angular.module('turnosApp')
             $scope.showTabDialog3 = function(ev) {
                 $mdDialog.show({
                         template: '<abm-user></abm-user>',
+                        parent: angular.element(document.body),
+                        targetEvent: ev,
+                        clickOutsideToClose: true
+                    })
+                    .then(function(answer) {
+                        $scope.status = 'You said the information was "' + answer + '".';
+                    }, function() {
+                        $scope.status = 'You cancelled the dialog.';
+                    });
+            };
+            $scope.showTabDialog4 = function(ev) {
+                $mdDialog.show({
+                        template: '<datos-cmedico></datos-cmedico>',
                         parent: angular.element(document.body),
                         targetEvent: ev,
                         clickOutsideToClose: true

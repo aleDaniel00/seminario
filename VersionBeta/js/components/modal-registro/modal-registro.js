@@ -5,7 +5,7 @@ angular.module('turnosApp').component('modalRegistro', {
         close: '&',
         dismiss: '&'
     },
-    controller: function(PacientesService) {
+    controller: function(PacientesService, $scope) {
         var $ctrl = this;
 
 
@@ -28,14 +28,24 @@ angular.module('turnosApp').component('modalRegistro', {
         };
 
         $ctrl.createUser = function() {
-            console.log($ctrl.proyecto);
-            PacientesService.createUser($ctrl.proyecto).then(
+            console.log($ctrl.nuevoUsuario);
+            PacientesService.createUser($ctrl.nuevoUsuario).then(
                 function(rta) {
                     console.log(rta.data);
+                    console.log(rta.data.Info);
+                    console.log(rta.data.Error);
+                    if (rta.data.Error === 1 || rta.data.Error === 2) {
+                        $scope.mensajeError = rta.data.Info;
+                    } else if (rta.data.Error === 0) {
+
+                        $scope.mensajeExito = 'Usuario Registrado correctamente';
+                    }
+
 
                 },
                 function(rta) {
-                    console.log(rta.data);;
+                    console.log(rta.data);
+                    $scope.mensajeError = 'Hay un error externo a turnos-app';
                 }
             );
         }

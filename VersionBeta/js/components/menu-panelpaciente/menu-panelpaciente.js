@@ -1,7 +1,177 @@
 angular.module('turnosApp')
     .component('menuPanelpaciente', {
         templateUrl: './js/components/menu-panelpaciente/menu-panelpaciente.html',
-        controller: function($scope, $timeout, $mdSidenav, $mdDialog, CMedicosService) {
+        controller: function($scope, $timeout, $mdSidenav, $mdDialog, CMedicosService, $location, $http) {
+            if ($location.path() === '/panelCentroMedico') {
+                $scope.panelCentroMedico = true;
+                $scope.titulo = 'Centro Medico GuemesPonele';
+
+                $scope.agregarTurno = function() {
+                    /**
+                     * algunos eventos y acciones sobre el turno confirmado
+                     *  
+                     */
+                }
+                $scope.eliminarTurno = function() {
+                    /**
+                     * algunos eventos y acciones sobre el turno confirmado
+                     *  
+                     */
+                }
+                $scope.editarEstado = function() {
+                    /**
+                     * algunos eventos y acciones sobre el turno confirmado
+                     *  
+                     */
+                }
+                $scope.cambiarEstadoAtendido = function() {
+                    /**
+                     * algunos eventos y acciones sobre el turno confirmado
+                     *  
+                     */
+                }
+                $scope.cambiarEstado = function() {
+                    /**
+                     * algunos eventos y acciones sobre el turno confirmado
+                     *  
+                     */
+                }
+                $scope.cambiarPrioridad = function() {
+                    /**
+                     * algunos eventos y acciones sobre el turno confirmado
+                     *  
+                     */
+                }
+                $scope.editarObservaciones = function() {
+                        /**
+                         * algunos eventos y acciones sobre el turno confirmado
+                         *  
+                         */
+                    }
+                    /**
+                     * Configuraciones del pánel del centro medico
+                     */
+
+            } else if ($location.path() === '/panelTurno/turnoConfirmado') {
+
+                $scope.opcionesTurnoConfirmado = true;
+                $scope.titulo = 'Buenas Noticias';
+                $scope.info = 'El tiempo para tu turno en la guardia';
+                $scope.hora_preseleccionada = '03:02:05'
+                $scope.consejo = 'Si este horario te conviene presiona el boton de confirmar asistencia, si no es asi, puedes volve atras para seleccionar otro centro medico';
+                $scope.consejo2 = 'Si este horario te conviene presiona el boton de confirmar asistencia, si no es asi, puedes volve atras para seleccionar otro centro medico';
+                $scope.consejo3 = 'Si este horario te conviene presiona el boton de confirmar asistencia, si no es asi, puedes volve atras para seleccionar otro centro medico';
+                $scope.openOtionsTurno = function() {
+                        /**
+                         * algunos eventos y acciones sobre el turno confirmado
+                         *  
+                         */
+                    }
+                    /**
+                     * 
+                     */
+
+                $scope.topDirections = ['left', 'up'];
+                $scope.bottomDirections = ['down', 'right'];
+
+                $scope.isOpen = false;
+
+                $scope.availableModes = ['md-fling', 'md-scale'];
+                $scope.selectedMode = 'md-fling';
+
+                $scope.availableDirections = ['up', 'down', 'left', 'right'];
+                $scope.selectedDirection = 'up';
+
+            } else if ($location.path() === '/panelTurno/turno') {
+                $scope.ocultarBuscadorDelCentroMedico = true;
+                $scope.titulo = 'Solicitar Turno';
+                $scope.info = 'El tiempo para tu turno en la guardia';
+                $scope.hora_preseleccionada = '03:02:05'
+                $scope.consejo = 'Si este horario te conviene presiona el boton de confirmar asistencia, si no es asi, puedes volve atras para seleccionar otro centro medico';
+                $scope.confirmarTurno = function() {
+                    /**
+                     * Debo trarer una hora de turno disponible por la guardia
+                     */
+                }
+                $scope.cmedic_seleccionado = true;
+
+            } else {
+                $scope.panelTurnosBusquedaCentro = true;
+                $scope.titulo = 'Lista de centros medicos'
+                $scope.info = 'Puedes filtrar por nombre o barrio, a continuacion selecciona un centro medico'
+
+                /*
+                 * el controller de el resultado de la busqueda (md-radio-button) ;) 
+                 */
+
+                CMedicosService.getCentros().then(
+                    function(rta) {
+                        $scope.cmedicos = rta.data.Centros;
+                    },
+                    function(rta) {
+                        console.log(rta.data);
+                    }
+                );
+                /**
+                 * PopUps, se les puede poner un template mas piola! mas adelante!
+                 */
+                $scope.navigateToTel = function(to, event) {
+                    $mdDialog.show(
+                        $mdDialog.alert()
+                        .title('Telefonos')
+                        .textContent('Puedes llamar directamente: ' + to.Numero[0])
+                        .ariaLabel('Navigation demo')
+                        .ok('Cerrar')
+                        .targetEvent(event)
+                    );
+                };
+                $scope.navigateToUbi = function(to, event) {
+                    $mdDialog.show(
+                        $mdDialog.alert()
+                        .title('Ubicacion')
+                        .textContent('Puedes buscar en google maps: ' + to.Ubicacion)
+                        .ariaLabel('Navigation demo')
+                        .ok('Cerrar')
+                        .targetEvent(event)
+                    );
+                };
+
+
+                /**
+                 * Funcion que muestral al usuario el CM escogido
+                 */
+
+                $scope.getSelectedItem = function(centroMedicoEscogidoTemporalmente) {
+                    if (centroMedicoEscogidoTemporalmente != undefined) {
+                        console.log("You have selected: Item " + centroMedicoEscogidoTemporalmente);
+                        $scope.seleccionTemporal = centroMedicoEscogidoTemporalmente;
+                    } else {
+                        console.log("Please select an item");
+                    }
+                };
+                /**
+                 * funcion del envio del form para pedir un turno
+                 */
+                $scope.selectedItem;
+                $scope.submitSelectCmedico = function(selectedItem) {
+                    $scope.cmedic_seleccionado = true;
+                    if ($scope.selectedItem !== undefined) {
+
+                        console.log("You have selected: Item " + $scope.selectedItem);
+
+                        /**
+                         * Una vez el centro medico se selecciona y se presiona el boton solicitar turno 
+                         * se debe hacer una consulta al centro medico donde se consultara la hora mas proxima para su turno
+                         */
+
+                    }
+                };
+            }
+
+
+            /**
+             * Menu lateral apertura
+             */
             $scope.toggleLeft = buildToggler('left');
             $scope.toggleRight = buildToggler('right');
 
@@ -10,187 +180,8 @@ angular.module('turnosApp')
                     $mdSidenav(componentId).toggle();
                 }
             }
-            /*
-             * el controller de el filtro ;) 
-             */
-            $scope.isNavCollapsed = true;
-            $scope.isCollapsed = true;
-
-            /*
-             * el controller de el resultado de la busqueda (cards) ;) 
-             */
-            $scope.toppings = [
-                { name: 'Pepperoni', wanted: true },
-                { name: 'Sausage', wanted: false },
-                { name: 'Black Olives', wanted: true },
-                { name: 'Green Peppers', wanted: false }
-            ];
-
-            $scope.settings = [
-                { name: 'Wi-Fi', extraScreen: 'Wi-fi menu', icon: 'device:network-wifi', enabled: true },
-                { name: 'Bluetooth', extraScreen: 'Bluetooth menu', icon: 'device:bluetooth', enabled: false },
-            ];
-
-            $scope.messages = [
-                { id: 1, title: "Message A", selected: false },
-                { id: 2, title: "Message B", selected: true },
-                { id: 3, title: "Message C", selected: true },
-            ];
-
-            CMedicosService.getAllCMedicos().then(
-                function(rta) {
-
-                    console.log(rta.data.Centros);
-
-                    $scope.cmedicos = rta.data.Centros;
-                    console.log($scope.cmedicos);
-                },
-                function(rta) {
-                    console.log(rta.data);
-                }
-            );
-            /*$scope.people = [
-                { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
-                { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
-                { name: 'Peter Carlsson', img: 'img/100-2.jpeg', newMessage: false },
-                { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
-                { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
-                { name: 'Peter Carlsson', img: 'img/100-2.jpeg', newMessage: false },
-                { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
-                { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
-                { name: 'Peter Carlsson', img: 'img/100-2.jpeg', newMessage: false },
-                { name: 'Janet Perkins', img: 'img/100-0.jpeg', newMessage: true },
-                { name: 'Mary Johnson', img: 'img/100-1.jpeg', newMessage: false },
-                { name: 'Peter Carlsson', img: 'img/100-2.jpeg', newMessage: false }
-            ];*/
-
-            $scope.goToPerson = function(cmedico, event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                    .title('Navigating')
-                    .textContent('Inspect ' + cmedico)
-                    .ariaLabel('Person inspect demo')
-                    .ok('Neat!')
-                    .targetEvent(event)
-                );
-            };
-
-            $scope.navigateTo = function(to, event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                    .title('Navigating')
-                    .textContent('Imagine being taken to ' + to)
-                    .ariaLabel('Navigation demo')
-                    .ok('Neat!')
-                    .targetEvent(event)
-                );
-            };
-
-            $scope.doPrimaryAction = function(event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                    .title('Primary Action')
-                    .textContent('Primary actions can be used for one click actions')
-                    .ariaLabel('Primary click demo')
-                    .ok('Awesome!')
-                    .targetEvent(event)
-                );
-            };
-
-            $scope.doSecondaryAction = function(event) {
-                $mdDialog.show(
-                    $mdDialog.alert()
-                    .title('Secondary Action')
-                    .textContent('Secondary actions can be used for one click actions')
-                    .ariaLabel('Secondary click demo')
-                    .ok('Neat!')
-                    .targetEvent(event)
-                );
-            };
-
-            /*
-             * el controller del form ;) 
-             */
-            var self = this;
-
-            // list of `state` value/display objects
-            self.states = loadAll();
-            self.selectedItem = null;
-            self.searchText = null;
-            self.querySearch = querySearch;
-
-            // ******************************
-            // Internal methods
-            // ******************************
-
-            /**
-             * Search for states... use $timeout to simulate
-             * remote dataservice call.
-             */
-            function querySearch(query) {
-                var results = query ? self.states.filter(createFilterFor(query)) : self.states;
-                var deferred = $q.defer();
-                $timeout(function() { deferred.resolve(results); }, Math.random() * 1000, false);
-                return deferred.promise;
-            }
-
-            /**
-             * Build `states` list of key/value pairs
-             */
-            function loadAll() {
-                var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
-              Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
-              Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
-              Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
-              North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
-              South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
-              Wisconsin, Wyoming';
-
-                return allStates.split(/, +/g).map(function(state) {
-                    return {
-                        value: state.toLowerCase(),
-                        display: state
-                    };
-                });
-            }
-
-            /**
-             * Controller del los select del filtro de busqueda de CM
-             */
-            $scope.sizes = [
-                "small (12-inch)",
-                "medium (14-inch)",
-                "large (16-inch)",
-                "insane (42-inch)"
-            ];
-            $scope.toppings = [
-                { category: 'meat', name: 'Pepperoni' },
-                { category: 'meat', name: 'Sausage' },
-                { category: 'meat', name: 'Ground Beef' },
-                { category: 'meat', name: 'Bacon' },
-                { category: 'veg', name: 'Mushrooms' },
-                { category: 'veg', name: 'Onion' },
-                { category: 'veg', name: 'Green Pepper' },
-                { category: 'veg', name: 'Green Olives' }
-            ];
-            $scope.selectedToppings = [];
-            $scope.printSelectedToppings = function printSelectedToppings() {
-                var numberOfToppings = this.selectedToppings.length;
-
-                // If there is more than one topping, we add an 'and'
-                // to be gramatically correct. If there are 3+ toppings
-                // we also add an oxford comma.
-                if (numberOfToppings > 1) {
-                    var needsOxfordComma = numberOfToppings > 2;
-                    var lastToppingConjunction = (needsOxfordComma ? ',' : '') + ' and ';
-                    var lastTopping = lastToppingConjunction +
-                        this.selectedToppings[this.selectedToppings.length - 1];
-                    return this.selectedToppings.slice(0, -1).join(', ') + lastTopping;
-                }
-
-                return this.selectedToppings.join('');
-            };
         }
+
     })
     .config(function($mdThemingProvider) {
 

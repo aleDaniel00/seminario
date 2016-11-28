@@ -1,7 +1,7 @@
 <div layout="coloumn" ng-cloak="" class="sidenavdemoCustomSidenav">
 
     <section layout="row" flex="">
-
+        <!--init Menu -->
         <md-sidenav class="md-sidenav-left" md-component-id="left" md-disable-backdrop="" md-whiteframe="4">
 
             <md-toolbar class="md-theme-dark">
@@ -16,141 +16,247 @@
             </md-content>
 
         </md-sidenav>
-
+        <!--end Menu -->
         <md-content flex="" layout-padding="">
-            <section layout="col" layout-sm="column" layout-align="left center" layout-wrap="" class="col-xs-12 col-md-12">
+            <!--init header -->
+            <section layout="col" layout-sm="column" layout-align="left center" layout-wrap="" class="col-xs-12 col-md-12" ng-show="cmedic_seleccionado || panelCentroMedico || opcionesTurnoConfirmado">
                 <md-button class="md-icon-button btn-menu-panelturnos" ng-click="toggleLeft()" aria-label="More">
                     <md-icon md-svg-icon="img/icons/more_vert.svg"></md-icon>
                 </md-button>
                 <span>Menu</span>
             </section>
+            <!--end header -->
+
             <div layout="column" layout-align="top center" class="search-input container-flex">
                 <!-- #col -->
                 <div class="col-xs-12 col-md-8">
-
-                    <h1>Hola, busca la guardia medica</h1>
-
                     <div class="well well-lg">
                         <div layout="column" ng-cloak>
                             <md-content class="md-padding md-accent">
-                                <form ng-submit="$event.preventDefault()" name="searchForm">
 
-                                    <div class="col-xs-12 col-md-10">
-                                        <md-input-container class="md-accent col-xs-12 col-md-6">
+                                <md-toolbar class="md-hue-2 head-section">
+                                    <div class="md-toolbar-tools">
+
+                                        <h2 class="titulo">
+                                            <span> {{titulo}}</span>
+                                        </h2>
+                                        <span flex></span>
+
+                                        <div class="opcionesTurnoConfirmado" ng-hide="ocultarBuscadorDelCentroMedico || panelTurnosBusquedaCentro || panelCentroMedico">
+                                            <div layout="column" ng-cloak="" class="fabSpeedDialdemoBasicUsage">
+                                                <md-content class="md-padding" layout="column">
+
+                                                    <div class="lock-size" layout="row" layout-align="center center">
+                                                        <md-fab-speed-dial md-open="isOpen" md-direction="left" ng-class="selectedMode">
+                                                            <md-fab-trigger>
+                                                                <md-button aria-label="menu" class="md-fab md-primary">
+                                                                    <md-icon md-svg-src="img/icons/settings.svg"></md-icon>
+                                                                </md-button>
+                                                            </md-fab-trigger>
+
+                                                            <md-fab-actions>
+                                                                <md-button aria-label="Twitter" class="md-fab md-raised md-mini">
+                                                                    <md-icon md-svg-src="img/icons/close.svg" aria-label="Twitter"></md-icon>
+                                                                </md-button>
+                                                                <md-button aria-label="Facebook" class="md-fab md-raised md-mini">
+                                                                    <md-icon md-svg-src="img/icons/close.svg" aria-label="Facebook"></md-icon>
+                                                                </md-button>
+                                                                <md-button aria-label="Google Hangout" class="md-fab md-raised md-mini">
+                                                                    <md-icon md-svg-src="img/icons/close.svg" aria-label="Google Hangout"></md-icon>
+                                                                </md-button>
+                                                            </md-fab-actions>
+                                                        </md-fab-speed-dial>
+                                                    </div>
+                                                </md-content>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </md-toolbar>
+                                <div ng-show="panelCentroMedico">
+                                    <div class="panel panel-default">
+                                        <!-- Default panel contents -->
+                                        <div class="panel-heading">Panel administrativo de turnos</div>
+                                        <div class="panel-body">
+                                            <form ng-submit="$event.preventDefault()" name="searchFormTurno" ng-cloak>
+
+                                                <div class="col-xs-12 col-md-8">
+                                                    <md-input-container class="md-accent col-xs-12 col-md-8">
+                                                        <md-icon class="icon-search" md-svg-icon="img/clock.svg"></md-icon>
+                                                        <label>busca alfaveticamente</label>
+                                                        <input ng-model="search.Turno" />
+                                                    </md-input-container>
+
+                                                </div>
+                                                <div class="col-xs-12 col-md-2 pull-right" ng-hide="opcionesTurnoConfirmado || panelTurnosBusquedaCentro">
+                                                    <md-button type="submit" class="md-raised col-xs-12 col-md-6 md-primary" ng-href="#/panelTurno/turnoConfirmado">
+                                                        Agregar
+                                                    </md-button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <!-- Table -->
+                                        <div class="table-responsive">
+                                            <table class="table table-hover">
+                                                <thead>
+                                                    <tr>
+                                                        <th>#</th>
+                                                        <th>First Name</th>
+                                                        <th>Last Name</th>
+                                                        <th>Username</th>
+                                                        <th>Username</th>
+                                                        <th>Username</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">1</th>
+                                                        <td>Mark</td>
+                                                        <td>Otto</td>
+                                                        <td>@mdo</td>
+                                                        <td>@mdo</td>
+                                                        <td>@mdo</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">2</th>
+                                                        <td>Jacob</td>
+                                                        <td>Thornton</td>
+                                                        <td>@fat</td>
+                                                        <td>@fat</td>
+                                                        <td>@fat</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">3</th>
+                                                        <td>Larry</td>
+                                                        <td>the Bird</td>
+                                                        <td>@twitter</td>
+                                                        <td>@twitter</td>
+                                                        <td>@twitter</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div ng-hide="panelCentroMedico">
+                                    <p class="info">{{info}}</p>
+
+                                    <p class="hora_pre" ng-show="opcionesTurnoConfirmado || ocultarBuscadorDelCentroMedico">{{hora_preseleccionada}}</p>
+
+                                    <p class="head-consejo" ng-show="opcionesTurnoConfirmado || ocultarBuscadorDelCentroMedico">{{consejo}}</p>
+                                    <div class="consejosExtras" ng-show="opcionesTurnoConfirmado">
+
+                                        <div class="row">
+                                            <div class="col-md-4">
+                                                <section class="box-1">
+                                                    <h2>Algunas sugerencias</h2>
+                                                    <p>{{consejo2}}</p>
+                                                </section>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <section class="box-2">
+                                                    <h2>Sobre el centro medico</h2>
+                                                    <p>{{consejo3}}</p>
+
+                                                </section>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <section class="box-3">
+                                                    <h2>Sobre tu estado</h2>
+                                                    <p>{{consejo2}}</p>
+
+                                                </section>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+
+                                    <div class="col-md-6 col-md-offset-3 preturno" ng-hide="opcionesTurnoConfirmado || panelTurnosBusquedaCentro">
+                                        <md-button type="submit" class="md-raised col-xs-12 col-md-6 md-primary" ng-href="#/panelTurno/turnoConfirmado">
+                                            Confirmar
+                                        </md-button>
+                                        <md-button type="submit" class="md-raised col-xs-12 col-md-6" ng-href="#/panelTurno">
+                                            Atras
+                                        </md-button>
+                                    </div>
+
+                                </div>
+                                <form ng-submit="$event.preventDefault()" name="searchForm" ng-cloak ng-hide="ocultarBuscadorDelCentroMedico || opcionesTurnoConfirmado || panelCentroMedico">
+
+                                    <div class="col-xs-12 col-md-12">
+                                        <md-input-container class="md-accent col-xs-12 col-md-8">
                                             <md-icon class="icon-search" md-svg-icon="img/icons/magnify.svg"></md-icon>
                                             <label>Nombre de la Guardia o Sanatorio</label>
-                                            <input ng-model="search.$" />
+                                            <input ng-model="search.Nombre" />
                                         </md-input-container>
-
-
-                                        <md-input-container class="md-accent col-xs-12 col-md-6">
+                                        <md-input-container class="md-accent col-xs-12 col-md-4">
                                             <md-icon class="icon-location" md-svg-icon="img/icons/map-marker-radius.svg"></md-icon>
                                             <label>Barrio de CABA</label>
-                                            <md-select name="type" ng-model="project.type">
-                                                <md-option value="app">Application</md-option>
-                                                <md-option value="web">Website</md-option>
+                                            <md-select ng-model="search.Barrio">
+                                                <md-option ng-value="cm.Barrio" ng-repeat="cm in cmedicos">{{cm.Barrio}}</md-option>
                                             </md-select>
                                         </md-input-container>
-
                                     </div>
-                                    <div class="col-xs-12 col-md-2">
-                                        <md-button class="md-raised search-button pull-right">
-                                            <md-icon class="icon-location" md-svg-icon="img/icons/magnify.svg"></md-icon>Buscar</md-button>
-                                    </div>
-
-
-
                                 </form>
                             </md-content>
                         </div>
                     </div>
-                    <div class="row  box-filter">
-                        <div class="col-xs-12 col-md-2">
-                            <button type="button" class="btn btn-default btn-filter" ng-click="isCollapsed = !isCollapsed"><i class="material-icons">filter_list</i></button>
-                            <span class="text">Filtrar</span>
-                        </div>
-                        <div class="col-xs-12 col-md-10">
-                            <div uib-collapse="isCollapsed">
-                                <div layout="row">
-                                    <div class="col-xs-12 col-md-8">
-                                        <md-input-container style="margin-right: 10px;">
-                                            <label>Size</label>
-                                            <md-select ng-model="size">
-                                                <md-option ng-repeat="size in sizes " value="{{size}}">{{size}}</md-option>
-                                            </md-select>
-                                        </md-input-container>
-                                        <md-input-container>
-                                            <label>Topping</label>
-                                            <md-select ng-model="selectedToppings" multiple>
-                                                <md-optgroup label="Meats">
-                                                    <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'meat' }">{{topping.name}}</md-option>
-                                                </md-optgroup>
-                                                <md-optgroup label="Veggies">
-                                                    <md-option ng-value="topping.name" ng-repeat="topping in toppings | filter: {category: 'veg' }">{{topping.name}}</md-option>
-                                                </md-optgroup>
-                                            </md-select>
-                                        </md-input-container>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="well well-lg result-search">
+                    <form class="well well-lg result-search" name="formSelectCM" ng-submit="submitSelectCmedico(selectedItem,$event)" ng-cloak novalidate ng-hide="ocultarBuscadorDelCentroMedico || opcionesTurnoConfirmado || panelCentroMedico">
 
                         <div layout=" column " class="layout-column">
                             <div ng-cloak class="col-xs-12 col-md-8">
 
-                                <md-subheader class="md-no-sticky">Resultados de la busqueda, <strong>selecciona uno para continuar.</strong>. Tambien puedes ver su telefono y ubicacion</md-subheader>
-                                <md-radio-group ng-model="cc.selectedId">
-                                    <div ng-repeat="cm in cmedicos | filter:search:strict" class="noright">
+                                <md-subheader class="md-no-sticky"><strong>Selecciona uno para continuar.</strong>. Tambien puedes ver su telefono y ubicacion</md-subheader>
+                                <md-radio-group ng-model="selectedItem" name="selectRadioCM" required>
+                                    <div ng-repeat="cm in cmedicos | filter:search:strict | limitTo : 8" class="noright">
 
                                         <div flex layout='row' layout-padding layout-align="start center">
-                                            <md-radio-button flex ng-value="cm.IdCentroMedico" class="md-primary">
+                                            <md-radio-button flex ng-value="cm.IdCentroMedico" class="md-primary" ng-click="getSelectedItem(cm.Nombre)" md-no-ink>
                                                 {{cm.Nombre}}
                                             </md-radio-button>
                                             <div style="max-width:200px;" class="tel-dir">
-                                                <md-button>
-                                                    <md-icon md-svg-icon="img/icons/map-marker.svg" ng-click="navigateTo(cm.Ubicacion)" aria-label="Send Email" class="md-secondary md-hue-3 ab"></md-icon>
+                                                <md-button ng-click="navigateToUbi(cm)">
+                                                    <md-icon md-svg-icon="img/icons/map-marker.svg" aria-label="Send Email" class="md-secondary md-hue-3 ab"></md-icon>
                                                 </md-button>
-                                                <md-button>
-                                                    <md-icon class="md-secondary ab" ng-click="doSecondaryAction(cm.Telefono)" aria-label="Chat" md-svg-icon="img/icons/phone-classic.svg"></md-icon>
+                                                <md-button ng-click="navigateToTel(cm)">
+                                                    <md-icon class="md-secondary ab" aria-label="Chat" md-svg-icon="img/icons/phone-classic.svg"></md-icon>
                                                 </md-button>
                                             </div>
-                                            <md-divider></md-divider>
+
                                         </div>
 
                                     </div>
                                 </md-radio-group>
                             </div>
                             <div class="col-xs-12 col-md-4">
+                                <div class="col-xs-12 col-md-12 preseleccion">
+                                    <div class="content">
+                                        <p ng-hide="seleccionTemporal">Aun no Seleccionaste ningun centro medico</p>
+                                        <div ng-show="seleccionTemporal">
+                                            <p class="headSeleccion">Seleccionaste: </p>
+                                            <p class="seleccionTemporal">{{seleccionTemporal}}</p>
+                                        </div>
 
-                                <md-button class="md-raised col-md-4 confirm-button ">Continuar</md-button>
+                                    </div>
+
+                                </div>
+                                <div class="col-xs-12 col-md-12 btn-submit">
+                                    <md-button type="submit" class="md-raised col-md-4 confirm-button" ng-disabled="!selectedItem">
+                                        <a href="#/panelTurno/turno">Pedir Turno</a></md-button>
+
+                                </div>
 
                             </div>
-                        </div>
-
+                    </form>
                     </div>
-
-
-
-
-
-
-
-
-
-
                 </div>
+        </md-content>
 
-            </div>
-            <!-- /#col -->
+    </section>
 
-</div>
-</div>
-</md-content>
-
-</section>
-
-</div>
+    </div>

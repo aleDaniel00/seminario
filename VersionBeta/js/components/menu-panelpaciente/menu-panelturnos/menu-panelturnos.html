@@ -1,6 +1,6 @@
 <md-list ng-cloak>
 
-    <md-list-item ng-href="#/panelTurno/turno" class="noright">
+    <md-list-item ng-href="#/panelTurno/turnoConfirmado" class="noright" ng-hide="turnoSinConfirmar">
         <span class="md-icon-button md-primary" aria-label="Settings">
             <md-icon md-svg-icon="img/clock.svg"></md-icon>
         </span>
@@ -8,14 +8,7 @@
         <p>Turno</p>
 
     </md-list-item>
-    <md-list-item ng-click="showTabDialog2($event)" class="noright">
-        <span class="md-icon-button md-primary" aria-label="Settings">
-            <md-icon md-svg-icon="img/message-text-outline.svg"></md-icon>
-        </span>
 
-        <p>Mensajes</p>
-
-    </md-list-item>
     <md-list-item ng-click="showTabDialog3($event)" class="noright">
         <span class="md-icon-button md-primary" aria-label="Settings">
             <md-icon md-svg-icon="img/account-outline.svg"></md-icon>

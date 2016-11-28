@@ -2,36 +2,45 @@
 <div class="close">
     <span><i class="material-icons" ng-click="$ctrl.cancel()">&#xE5CD;</i></span>
 </div>
-<form class="form-login" ng-submit="$ctrl.login(proyecto)" novalidate>
+<form class="formLogin" ng-submit="$ctrl.login(usuarioLogueado)" name="formLogin" novalidate>
 
-    <div class="form-tittle">
+    <div class="form-tittle" ng-hide="mensajeExito">
         <h2>Ingresar</h2>
     </div>
 
-    <div class="container-fluid box-input-autor">
+    <div class="container-fluid box-input-autor" ng-hide="mensajeExito">
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon sizing-addon1"><i class="material-icons">perm_identity</i></span>
-                <input type="email" class="form-control" ng-model="$ctrl.proyecto.User" placeholder="Usuario" aria-describedby="sizing-addon1">
+                <input type="email" name="User" class="form-control" ng-model="$ctrl.usuarioLogueado.User" placeholder="Usuario" aria-describedby="sizing-addon1" required>
+            </div>
+            <div ng-show="formLogin.$submitted || formLogin.User.$touched">
+                <span ng-show="formLogin.User.$error.required" class="advertencia">El email es requerido</span>
+                <span ng-show="formLogin.User.$error.email" class="error">Ejemplo de email correcto: pepe@companymail.com</span>
             </div>
         </div>
     </div>
 
-    <div class="container-fluid box-input-autor">
+    <div class="container-fluid box-input-autor" ng-hide="mensajeExito">
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE899;</i></span>
-                <input type="password" class="form-control" ng-model="$ctrl.proyecto.Password" placeholder="Contraseña" aria-describedby="sizing-addon1">
+                <input type="password" name="pwd" class="form-control" ng-model="$ctrl.usuarioLogueado.Password" placeholder="Contraseña" aria-describedby="sizing-addon1" required>
+            </div>
+            <div ng-show="formLogin.$submitted || formLogin.pwd.$touched">
+                <span ng-show="formLogin.pwd.$error.required" class="advertencia">La contraseña es requerida</span>
             </div>
         </div>
     </div>
 
     <div class="container-fluid form-olvido">
-        <p><a href="">&iquest;Olvidaste la contrase&ntilde;a?</a></p>
+        <p class="ms-s mensajeErrorServer" ng-show="mensajeError" ng-hide="mensajeExito">{{mensajeError}}</p>
+        <p class="ms-s mensajeExitoServer" ng-show="mensajeExito">{{mensajeExito}}</p>
+        <p ng-hide="mensajeExito"><a href="">&iquest;Olvidaste la contrase&ntilde;a?</a></p>
     </div>
 
-    <div class="container-fluid form-btn-ingresar">
-        <button type="submit" class="btn btn-login">Ingresar</button>
+    <div class="container-fluid form-btn-ingresar" ng-hide="mensajeExito">
+        <button type="submit" class="btn btn-login" ng-disabled="formLogin.User.$error.required || formLogin.pwd.$error.required || formLogin.User.$error.email ">Ingresar</button>
     </div>
 
 </form>

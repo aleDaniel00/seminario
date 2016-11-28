@@ -2,48 +2,65 @@
 <div class="close">
     <span><i class="material-icons" ng-click="$ctrl.cancel()">&#xE5CD;</i></span>
 </div>
-<form class="form-registro" ng-submit="$ctrl.createUser(proyecto)" novalidate>
+<form class="form-registro" ng-submit="$ctrl.createUser(nuevoUsuario)" name="formRegistro" novalidate>
 
-    <div class="form-tittle">
+    <div class="form-tittle" ng-hide="mensajeExito">
         <h2>Registrarme</h2>
     </div>
 
-    <div class="container-fluid box-input-autor">
+    <div class="container-fluid box-input-autor" ng-hide="mensajeExito">
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE0BE;</i></span>
-                <input type="email" class="form-control" ng-model="$ctrl.proyecto.Email" placeholder="Email" aria-describedby="sizing-addon1">
+                <input type="email" class="form-control" name="Email" ng-model="$ctrl.nuevoUsuario.Email" placeholder="Email" aria-describedby="sizing-addon1" required>
+            </div>
+            <div ng-show="formRegistro.$submitted || formRegistro.Email.$touched">
+                <span ng-show="formRegistro.Email.$error.required" class="advertencia">El email es requerido</span>
+                <span ng-show="formRegistro.Email.$error.email" class="error">Ejemplo de email correcto: pepe@companymail.com</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-fluid box-input-autor" ng-hide="mensajeExito">
+        <div class="form-group">
+            <div class="input-group input-group-lg">
+                <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE2C9;</i></span>
+                <input type="password" name="pwd" class="form-control" ng-model="$ctrl.nuevoUsuario.Password" placeholder="Contraseña" aria-describedby="sizing-addon1" required>
+            </div>
+            <div ng-show="formRegistro.$submitted || formRegistro.pwd.$touched">
+                <span ng-show="formRegistro.pwd.$error.required" class="advertencia">La contraseña es requerida</span>
+
             </div>
         </div>
     </div>
 
-    <div class="container-fluid box-input-autor">
+    <div class="container-fluid box-input-autor" ng-hide="mensajeExito">
         <div class="form-group">
             <div class="input-group input-group-lg">
                 <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE2C9;</i></span>
-                <input type="password" class="form-control" ng-model="$ctrl.proyecto.Password" placeholder="Contraseña" aria-describedby="sizing-addon1">
+                <input type="number" name="NumeroSocio" class="form-control" ng-model="$ctrl.nuevoUsuario.NumeroSocio" placeholder="Numero de socio" aria-describedby="sizing-addon1" required ng-maxlength="12" ng-minlength="12">
             </div>
-        </div>
-    </div>
-
-    <div class="container-fluid box-input-autor">
-        <div class="form-group">
-            <div class="input-group input-group-lg">
-                <span class="input-group-addon sizing-addon1"><i class="material-icons">&#xE2C9;</i></span>
-                <input type="number" class="form-control" ng-model="$ctrl.proyecto.NumeroSocio" placeholder="Numero de socio" aria-describedby="sizing-addon1">
+            <div ng-show="formRegistro.$submitted || formRegistro.NumeroSocio.$touched">
+                <span ng-show="formRegistro.NumeroSocio.$error.required" class="advertencia">El numero de socio es requerido</span>
+                <span ng-show="formRegistro.NumeroSocio.$error.minlength" class="error">Te faltan algunos numero: son 12</span>
+                <span ng-show="formRegistro.NumeroSocio.$error.maxlength" class="error">Te sobran algunos numero: son 12</span>
             </div>
         </div>
     </div>
 
 
     <div class="container-fluid form-olvido">
-        <p>
+        <p class="ms-s mensajeErrorServer" ng-show="mensajeError" ng-hide="mensajeExito">{{mensajeError}}</p>
+        <p class="ms-s mensajeExitoServer" ng-show="mensajeExito">{{mensajeExito}}</p>
+        <p ng-hide="mensajeExito">
             Cuando inicias sesi&oacute;n confirmas que estaras de acuerdo con la <a href="">pol&iacute;tica de privacidad</a> y <a href="">los terminos de uso</a>
         </p>
     </div>
 
-    <div class="container-fluid form-btn-ingresar">
-        <button type="submit" class="btn btn-login">Registrate</button>
+    <div class="container-fluid form-btn-ingresar" ng-hide="mensajeExito">
+        <button type="submit" class="btn btn-login" ng-disabled="formRegistro.NumeroSocio.$error.maxlength || formRegistro.NumeroSocio.$error.minlength || formRegistro.NumeroSocio.$error.required || formRegistro.Email.$error.email || formRegistro.pwd.$error.required || formRegistro.Email.$error.required">Registrate</button>
     </div>
 
 </form>
